@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+
+/*navbar*/
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.heroPage{
+    background-image: url(images/bgImg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire container while maintaining aspect ratio */
+    position: relative;
+    max-height: 800px;
+}
+
+
+header{
+    max-height: 80px;
+    position: relative;
+}
+
+header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    margin: 18px 0;
+
+    img{
+        max-width: 90px;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        li{
+            padding: 0 3rem;
+
+            a{
+                font-size: 15px;
+                color: white;
+                letter-spacing: 2px;
+                text-decoration: none;
+
+                a:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.heroPg{
+    margin-top: 100px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.heroText{
+    max-width: 80%;
+
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    p{
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+.heroBtn{
+    margin-bottom: 150px;
+}
