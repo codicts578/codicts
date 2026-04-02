@@ -14,7 +14,7 @@
 
 /*navbar*/
 body{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Manrope", sans-serif;
     background-color: #000000;
     color: white;
 }
@@ -78,6 +78,7 @@ header .navbar{
     color: white;
     border: none;
     background-image: linear-gradient(to right, #328EB8, #793CE3);
+    margin-right: 15px;
 }
 
 #loginBtn{
@@ -87,7 +88,7 @@ header .navbar{
 }
 
 .heroPg{
-    margin-top: 150px;
+    margin-top: 120px;
     justify-items: center;
 }
 
@@ -95,10 +96,30 @@ header .navbar{
     max-width: 80%;
 
     h1{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
         text-align: center;
         color: white;
-        font-size: 50px;
-        font-weight: bold;
+        font-size: 75px;
+    }
+
+    .purpleGradient{
+        background-image: radial-gradient(#8135CD,#AD79DB,#6A1072);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        color: transparent;
+        display: inline-block;
+    }
+
+    .blueGradient{
+        background-image: radial-gradient(#23627F,#3FB1E5,#06425D);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        color: transparent;
+        display: inline-block;
     }
 
     p{
@@ -110,7 +131,7 @@ header .navbar{
 }
 
 #componentBtn, #starterBtn{
-    padding: 15px;
+    padding: 15px 20px;
     border-radius: 3px;
     border: none;
     margin: 10px;
@@ -141,11 +162,30 @@ header .navbar{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%; 
+
+    h2{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: white;
+        font-size: 45px;
+    }
+
+    h3{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+    }
 }
 
 #working{
     display: grid;
     justify-items: center;
+    justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(5, auto);
     margin: 50px 0;
@@ -156,7 +196,7 @@ header .navbar{
     background-image: linear-gradient(to bottom, #328eb83c, #be3fc738);
     padding: 20px;
     height: 100%;
-    width: 50%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     border-radius: 0 30px;
@@ -167,6 +207,13 @@ header .navbar{
 
     p{
         padding: 10px 0;
+        width: 90%;
+    }
+}
+
+.separate{
+    img{
+        width: 50px;
     }
 }
 
@@ -187,7 +234,6 @@ header .navbar{
 }
 
 .feature{
-    border: 3px solid #BF3FC7;
     width: 50%;
     margin: 10px 0;
     background-color: #0000009a;
@@ -201,11 +247,24 @@ header .navbar{
     }
 }
 
+.blue{
+    border: 3px solid #3FB1E5;
+}
+
+.purple{
+    border: 3px solid #BF3FC7;
+}
+
 .explore{
     justify-items: center;
 
     h2{
-        padding: 15px 0;
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: white;
+        font-size: 45px;
     }
 
     p{
@@ -307,9 +366,11 @@ header .navbar{
 
 .browseBtn{
     background-color: transparent;
-    padding: 10px;
+    padding: 10px 30px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    color: white;
+    border: 1px white solid;
 }
 
 .pricing{
@@ -318,6 +379,15 @@ header .navbar{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%; 
+
+    h2{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: white;
+        font-size: 45px;
+    }
 }
 
 #priceSection{
@@ -396,8 +466,13 @@ header .navbar{
     text-align: center;
     
     h2{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        color: white;
         font-size: 50px;
-        padding-bottom: 30px ;
+        padding-bottom: 20px;
     }
 
     p{
@@ -413,6 +488,7 @@ header .navbar{
         border: solid 1px white;
         padding: 10px 30px;
         border-radius: 25px;
+        margin: 0 auto;
     }
 }
 
