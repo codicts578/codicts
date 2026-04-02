@@ -1,3 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-image: url(/frontend/images/formPagesBg.png);
     background-position: center;
@@ -5,9 +11,9 @@ body{
     background-size: 100% 100%; 
     background-position: center center;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
     background-color: #000000;
     color: white;
+    font-family: "Manrope", sans-serif;
 }
 
 .container{
@@ -16,8 +22,6 @@ body{
     padding: 0 2rem;
     overflow: hidden;
 }
-
-
 
 header{
     max-height: 80px;
@@ -109,7 +113,7 @@ h5{
 
 .formGroup{
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 5px;
     margin: 10px 0;
 }
@@ -150,7 +154,7 @@ input{
 
     h4{
         font-size: 35px;
-        padding: 0;
+        padding: 20px 0;
     }
 
     strong{
