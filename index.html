@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/style.css">
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script> <!-- script link for icons-->
+    <link rel="stylesheet" href="style.css">
     <title>CODICTS | HOME</title>
 </head>
 <body>
@@ -20,8 +21,8 @@
                         <li><a href="">Pricing</a></li>
                     </ul>
                     <div>
-                        <button>Sign Up</button>
-                        <button>Log In</button>
+                        <button id="signupBtn">Sign Up</button>
+                        <button id="loginBtn">Log In</button>
                     </div>
                 </nav>
             </div>
@@ -33,10 +34,241 @@
                 <p>Codicts empowers aspiring developers and students to build real-world projects with professional-grade UI components and starter kits.</p>
             </div>
             <div class="heroBtn">
-                <button>Explore Components</button>
-                <button>View Starter Kits</button>
+                <button id="componentBtn">Explore Components</button>
+                <button id="starterBtn">View Starter Kits</button>
             </div>
         </section>
     </section>
+
+    <section id="builtfor">
+            <h4>Built for students and aspiring developers to learn UI design and build real-world projects faster.</h4>
+    </section>
+
+    <section class="howItWorks">
+        <h2>How Codicts Works</h2>
+        <div id="working">
+            <div class="box">
+                <h4>Preview</h4>
+                <p>Explore a curated collection of UI components and starter kits designed for modern applications.</p>
+            </div>
+
+            <div>
+                <p>></p>
+            </div>
+
+            <div class="box">
+                <h4>Customize</h4>
+                <p>Modify styles, structure and layouts instantly while previewing changes in real time.</p>
+            </div>
+
+            <div>
+                <p>></p>
+            </div>
+
+            <div class="box">
+                <h4>Export</h4>
+                <p>Export clean, production-ready code directly into your project.</p>
+            </div>
+        </div>
+
+        <div class="sectionBg"></div>
+
+        <div class="secondSection">
+            <h3>Everything You Need to Build Modern Interfaces</h3>
+            <p>A focused toolkit that simplifies UI development and accelerates real-world product creation.</p>
+
+            <div id="features">
+                <div class="feature">
+                    <img src="" alt="">
+                    <h4>Live Code Editing</h4>
+                    <p>Edit components in real time and instantly preview changes without disrupting your workflow.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="" alt="">
+                    <h4>UI Components</h4>
+                    <p>Reusable elements designed for scalability, clean integration and high performance.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="" alt="">
+                    <h4>MVP Starter Kits</h4>
+                    <p>Pre-built foundations to help you prototype and launch faster without starting from scratch.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="" alt="">
+                    <h4>Multi-Framework Support</h4>
+                    <p>Export components in HTML, CSS, React and more, ready to integrate into any project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore">
+        <h2>Explore Modern UI Components</h2>
+        <p>Designed for contemporary dark interfaces and scalable digital products.</p>
+
+        <div class="exploreCards">
+            <div class="card card1">
+                <div class="cardHead card1Color"></div>
+                <div class="cardText card1Color"></div>
+                <div class="cardBody card1Color"></div>
+                
+                <h4>Gradient Button</h4>
+                <p>Buttons</p>
+            </div>
+
+            <div class="card card2">
+                <div class="cardHead card2Color"></div>
+                <div class="cardText card2Color"></div>
+                <div class="cardBody card2Color"></div>
+                
+                <h4>Glass Card</h4>
+                <p>Cards</p>
+            </div>
+
+            <div class="card card3">
+                <div class="cardHead card3Color"></div>
+                <div class="cardText card3Color"></div>
+                <div class="cardBody card3Color"></div>
+                
+                <h4>Login Form</h4>
+                <p>Login</p>
+            </div>
+
+            <div class="card card4">
+                <div class="cardHead card4Color"></div>
+                <div class="cardText card4Color"></div>
+                <div class="cardBody card4Color"></div>
+                
+                <h4>Responsive Navbar</h4>
+                <p>Navbar</p>
+            </div>
+
+            <div class="card card5">
+                <div class="cardHead card5Color"></div>
+                <div class="cardText card5Color"></div>
+                <div class="cardBody card5Color"></div>
+                
+                <h4>Hero Banner</h4>
+                <p>Hero</p>
+            </div>
+
+            <div class="card card6">
+                <div class="cardHead card6Color"></div>
+                <div class="cardText card6Color"></div>
+                <div class="cardBody card6Color"></div>
+                
+                <h4>Footer Section</h4>
+                <p>Footer</p>
+            </div>
+        </div>
+
+        <div>
+            <button class="browseBtn">Browse All Components  -></button>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Start free and upgrade when you need access to the full component library and advanced starter kits.</p>
+
+        <div id="priceSection">
+            <div class="priceCard">
+                <h4>Free</h4>
+                <p>Perfect for exploring Codicts and building small projects.</p>
+
+                <h3><strong>$0</strong>/month</h3>
+                <button>Get Started</button>
+
+                <ul>
+                    <li>Limited access to UI components</li>
+                    <li>View design + code split screen</li>
+                    <li>Copy HTML/CSS code</li>
+                    <li>Download design image</li>
+                    <li>Basic search and category browsing</li>
+                </ul>
+            </div>
+
+            <div class="popularPriceCard">
+                <div class="popular">
+                    <h5>POPULAR</h5>
+                </div>
+
+                <div class="proCard">
+                    <h4>Pro</h4>
+                <p>Everything you need to build and launch real projects faster.</p>
+
+                <h3><strong>$9</strong>/month</h3>
+                <button>Subscribe Pro</button>
+
+                <ul>
+                    <li>Access to full component library</li>
+                    <li>Multiple frameworks(HTML, CSS, React)</li>
+                    <li>Download code files</li>
+                    <li>Customization tools</li>
+                    <li>New components added weekly</li>
+                    <li>Starter Kit for beginners</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="priceCard">
+                <h4>Team Plan</h4>
+                <p>Perfect for exploring Codicts and building small projects.</p>
+
+                <h3><strong>$12</strong>/month</h3>
+                <button>Get Started</button>
+
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>Team collaboration</li>
+                    <li>Unlimited downloads</li>
+                    <li>Advanced UI components</li>
+                    <li>Full design kits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="getStartedBanner">
+        <h2>START BUILDING TODAY</h2>
+        <p>Accelerate your worklflow and create modern, production-ready interfaces in minutes.</p>
+        <button>Get Started Free</button>
+    </section>
+
+    <footer>
+        <div class="footerContent">
+            <div class="intro">
+                <h3>CODICTS</h3>
+                <p>Codicts provides modern UI components and MVP starter kits designed to help developers and students build interfaces faster and more efficiently.</p>
+                <p class="slogan">Design smarter. Code faster.</p>
+            </div>
+
+            <div class="products">
+                <h3>Products</h3>
+                <ul>
+                    <li>Components</li>
+                    <li>Starter Kits</li>
+                    <li>Pricing</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <h3>Connect</h3>
+                <p>Follow Codicts for product updates, new components and UI inspiration</p>
+
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+        </div>
+    </footer>
 </body>
 </html>
