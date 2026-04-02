@@ -86,19 +86,24 @@ header .navbar{
 
 .heroText{
     max-width: 80%;
+    text-align: center;
 
     h1{
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
         text-align: center;
         color: white;
-        font-size: 50px;
-        font-weight: bold;
+        font-size: 75px;
     }
 
-    p{
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        padding: 20px;
+    .gradient{
+        background-image: linear-gradient(to right, #4CC8DD, #7F18E5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        color: transparent;
+        display: inline-block;
     }
 }
 
