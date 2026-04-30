@@ -74,6 +74,10 @@ header .navbar{
     text-align: center;
 }
 
+#signupBtn, #loginBtn:hover{
+    cursor: pointer;
+}
+
 #signupBtn{
     color: white;
     border: none;
