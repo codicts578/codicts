@@ -18,6 +18,11 @@ body{
     color: white;
 }
 
+button{
+    cursor: pointer;
+}
+
+
 .heroPage{
     background-image: url(images/bgImg.png);
     background-position: center;
@@ -90,7 +95,6 @@ header .navbar{
     border: 1px white solid;
 }
 
-/* Container for the whole menu */
 .user-menu-container {
     position: relative;
     display: inline-block;
@@ -652,6 +656,10 @@ header .navbar{
         border-radius: 25px;
         margin: 0 auto;
     }
+
+    a{
+        text-decoration: none;
+    }
 }
 
 footer{
@@ -686,6 +694,11 @@ footer{
 
         li{
             padding: 10px 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
         }
     }
 
