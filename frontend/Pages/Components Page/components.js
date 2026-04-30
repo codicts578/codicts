@@ -1,12 +1,4 @@
-const UI_COMPONENTS = [
-    { name: "Modern Navbar", category: "mystery", img: "images/components page/component1.png", tag: "Free" },
-    { name: "Gradient Button", category: "buttons", img: "images/components page/component2.png", tag: "Free" },
-    { name: "Glassmorphic Card", category: "cards", img: "images/components page/component3.png", tag: "Free" },
-    // Add all your other components here...
-];
-
-
-    // This runs as soon as the page loads
+   // This runs as soon as the page loads
     document.addEventListener('DOMContentLoaded', () => {
         
         // 1. Check if User is Logged In
@@ -14,17 +6,6 @@ const UI_COMPONENTS = [
             .then(res => res.json())
             .then(data => {
                 if (data.loggedIn) {
-                    // Update Navbar to show Username and Logout button
-                    const navButtons = document.querySelector('.navbar div');
-                    if (navButtons) {
-                        navButtons.innerHTML = `
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <span style="color: #333; font-weight: 600;">Hi, ${data.username}</span>
-                                <button onclick="window.location.href='/logout'" style="padding: 5px 10px; cursor: pointer;">Logout</button>
-                            </div>
-                        `;
-                    }
-
                     // 2. If logged in, fetch their likes to fill the hearts
                     return fetch('/my-likes');
                 }
@@ -93,45 +74,6 @@ const UI_COMPONENTS = [
 
 
 
-// This data object represents all your components
-const allComponents = [
-    { id: 1, name: "Modern Navbar", category: "mystery", img: "images/components page/component1.png", tag: "Free" },
-    { id: 2, name: "Gradient Button", category: "buttons", img: "images/components page/component2.png", tag: "Free" },
-    // ... add all your components here
-];
-
-///// SEE IF THE BELOW SPECIFIC BLOCK (ONLY CREATE CARD HTML) IS NEEDED OR NOT
-// Function to generate the HTML for a card (Reusable)
-function createCardHTML(item, isLiked) {
-    return `
-        <div class="itemCard" dataName="${item.category}">
-            <div class="itemImg">
-                <img src="${item.img}" alt="${item.name}">
-                <div class="tag">${item.tag}</div>
-            </div>
-            <button>View Component</button>
-            <i class="${isLiked ? 'fa-solid active' : 'fa-regular'} fa-heart like-icon" 
-               data-name="${item.name}" 
-               onclick="toggleLike(this, '${item.name}')"></i>
-        </div>
-    `;
-}
-
-function generateCardHTML(item, isLiked) {
-    return `
-        <div class="itemCard" dataName="${item.category}">
-            <div class="itemImg">
-                <img src="${item.img}" alt="${item.name}">
-                <div class="tag">${item.tag}</div>
-            </div>
-            <button>View Component</button>
-            <i class="${isLiked ? 'fa-solid active' : 'fa-regular'} fa-heart like-icon" 
-               data-name="${item.name}" 
-               onclick="toggleLike(this, '${item.name}')"></i>
-        </div>
-    `;
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
     const collection = document.querySelector('.UIcollection');
     
@@ -144,9 +86,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const likesRes = await fetch('/my-likes');
         const likesData = await likesRes.json();
         likedItems = likesData.likes || [];
-        
-        // Update Navbar (Your existing code)
-        document.querySelector('.navbar div').innerHTML = `<span>Hi, ${authData.username}</span>...`;
     }
 
     // 2. Render All Components
