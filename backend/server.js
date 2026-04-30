@@ -10,11 +10,9 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '..')));
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
-});
+app.use(express.static('frontend'));
 
 // 2. ADDED SESSION MIDDLEWARE (Must be before routes)
 app.use(session({
@@ -42,6 +40,9 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // --- ROUTES ---
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
 
 // 1. SIGNUP
 app.post('/signup', async (req, res) => {
@@ -53,7 +54,7 @@ app.post('/signup', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, email, password: hashedPassword });
         await newUser.save();
-        res.redirect('/loginPage.html');
+        res.redirect('/loginPage.html'); 
     } catch (error) {
         res.send("Error: Email already exists.");
     }
