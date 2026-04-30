@@ -99,6 +99,10 @@ img{
         color: white;
         background-image: linear-gradient(to right, rgb(122, 151, 247), rgb(109, 29, 207));
     }
+
+    a{
+        text-decoration: none;
+    }
 }
 
 /* Gray empty heart */
