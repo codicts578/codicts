@@ -193,6 +193,20 @@ footer{
         font-size: 25px;
         padding-right: 50px;
     }
+
+    i{
+        font-size: 25px;
+        padding-right: 50px;
+        color: white;
+    }
+
+    i:hover,
+    i:focus,
+    i:active {
+        color: white !important;
+        fill: white !important;
+        outline: none; /* Removes the focus ring mentioned earlier */
+    }
 }
 
 .copyright{
