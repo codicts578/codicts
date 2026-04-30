@@ -79,7 +79,15 @@
             </section>
 
             <section>
-                <h5>PAYMENT METHOD</h5>
+                <div class="payHead">
+                    <h5>PAYMENT METHOD</h5>
+                    <div class="cardLogo">
+                        <img src="/frontend/images/payLogo1.png" alt="">
+                        <img src="/frontend/images/payLogo2.png" alt="">
+                        <img src="/frontend/images/payLogo3.png" alt="">
+                        <img src="/frontend/images/payLogo4.png" alt="">
+                    </div>
+                </div>
                 <div class="formGroup">
                     <label for="name">Name on card</label>
                     <input type="text" id="name" name="name" placeholder="John Mathew" required>
@@ -102,7 +110,7 @@
             </section>
             
 
-            <button type="submit" class="submitBtn">Subscribe to Pro</button>
+            <button type="submit" class="submitBtn">Subscribe to Pro <i class="fa-solid fa-arrow-right-long"></i></button>
         </form>
 
         <section class="description info">
@@ -111,14 +119,25 @@
                 <h4>CODICTS PRO PLAN</h4>
                 <p>Everything you need to build faster</p>
 
-                <h3><strong>$9</strong>/month <br>Cancel anytime</h3>
-                <ul class="cancel">
-                    <li>Full UI component library</li>
-                    <li>Multi-framework support (HTML, CSS, React)</li>
-                    <li>Download ready-to-use code files</li>
-                    <li>Access to MVP Starter Kits</li>
-                    <li>Weekly new component updates</li>
+                <div class="pricedetails">
+                    <h3><strong>$9</strong></h3>
+                    <p>/ month<br><strong>Cancel anytime</strong></p>
+                </div>
+
+                <ul class="feature">
+                    <li><i class="fa-solid fa-circle-check"></i> Full UI component library</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Multi-framework support (HTML, CSS, React)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Download ready-to-use code files</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to MVP Starter Kits</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Weekly new component updates</li>
                 </ul>
+            </div>
+
+            <br>
+
+            <div class="total">
+                <h4>Total</h4>
+                <h3><strong>$9</strong> / month</h3>
             </div>
         </section>
     </section>
