@@ -75,7 +75,7 @@ app.post('/login', async (req, res) => {
             req.session.username = user.username;
             
             // REDIRECT TO HOMEPAGE (index.html)
-            res.redirect('/'); 
+            res.redirect('index.html'); 
         } else {
             res.send("Invalid password. <a href='loginPage.html'>Try again</a>");
         }
