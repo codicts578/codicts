@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // 2. ADDED SESSION MIDDLEWARE (Must be before routes)
 app.use(session({
