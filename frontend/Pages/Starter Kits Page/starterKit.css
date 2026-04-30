@@ -292,13 +292,13 @@ body {
     border-radius: 0;/
 }
 
-footer{
+footer {
     background-color: black;
     color: white;
     padding: 50px;
 }
 
-.footerContent{
+.footerContent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 90%;
@@ -306,47 +306,68 @@ footer{
     margin: 0 auto;
     padding: 30px 0;
 
-    h3{
+    h3 {
         font-size: 22px;
     }
 
-    p{
+    p {
         padding: 15px 0;
     }
 
-    .slogan{
+    .slogan {
         font-weight: bolder;
     }
 
-    ul{
+    ul {
         list-style-type: none;
         padding: 10px 0;
 
-        li{
+        li {
             padding: 10px 0;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: white;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        a:hover {
+            color: #ccc; 
+            padding-left: 5px; 
         }
     }
 
-    i{
+    /* Social Media Icons Style */
+    i {
         font-size: 25px;
         padding-right: 50px;
         color: white;
+        /* Added transition for smooth icon scaling */
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        display: inline-block;
     }
 
-    i:hover,
+    /* Modern glow and scale effect for icons */
+    i:hover {
+        color: white !important;
+        transform: translateY(-5px) scale(1.2); /* Lifts the icon up slightly */
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Adds a soft white glow */
+    }
+
     i:focus,
     i:active {
         color: white !important;
         fill: white !important;
-        outline: none; 
+        outline: none;
     }
 }
 
-.copyright{
+.copyright {
     text-align: center;
+    border-top: 1px solid #333; /* Added a subtle separator line */
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 14px;
+    opacity: 0.7; /* Makes copyright slightly more subtle */
 }
