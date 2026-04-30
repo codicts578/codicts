@@ -138,3 +138,22 @@ img{
     border-radius: 15px;
     width: 70px;
 }
+
+
+
+/* Gray empty heart */
+.like-icon {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Red filled heart */
+.like-icon.active {
+    color: #ff4d4d !important; /* Force red color */
+}
+
+.like-icon.fa-solid {
+    font-weight: 900; /* Required for Font Awesome solid icons */
+}
