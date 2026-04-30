@@ -280,6 +280,20 @@ h5{
     font-size: 15px;
 }
 
+.payHead{
+    display: flex;
+    justify-content: space-between;
+
+    .cardLogo{
+        padding-top: 10px;
+
+        img{
+            padding-right: 5px;
+            width: 50px;
+        }
+    }
+}
+
 .formGroup{
     border: 1px solid black;
     border-radius: 3px;
@@ -320,9 +334,13 @@ input:focus {
 .info{
     display: grid;
     grid-template-columns: repeat(2, auto);
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.submitBtn{
+    font-weight: 900;
 }
 
 .description{
@@ -347,7 +365,7 @@ input:focus {
         font-weight: 900;
     }
 
-    .cancel{
+    .feature{
         margin: 40px 0;
         padding: 30px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.306);
@@ -363,8 +381,23 @@ input:focus {
 .details{
     background-color: white;
     color: #000;
-    padding: 30px;
+    padding: 50px;
     border-radius: 50px 0 0 50px;
+
+    h5{
+        font-weight: 900;
+        padding: 20px 0;
+    }
+}
+
+.priceCard{
+    h3{
+        .cancellation{
+            font-weight: 600;
+            font-size: 18px;
+            color: #348AB9;
+        }
+    }
 }
 
 .loginContainer{
@@ -384,11 +417,58 @@ input:focus {
 
 .tag{
     width: 150px;
-    background-color: #793ce38d;
+    color: #965BFD;
     margin-top: 30px;
     margin-bottom: 0;
+    background-color: #4B0FB25E;
+    border: 1px solid #5E00FF;
 }
 
+.pricedetails{
+    display: flex;
+
+    p{
+        font-size: 15px;
+        margin-top: 8px;
+        margin-left: 10px;
+
+        strong{
+            font-size: 15px;
+            font-weight: 600;
+            color: #348AB9;
+        }
+    }
+}
+
+.feature{
+    i{
+        color: #793CE3;
+        padding-right: 30px;
+    }
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Manrope", sans-serif;
+
+    h4{
+        font-size: 20px;
+    }
+
+    h3{
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    strong{
+        background-image: linear-gradient(to right, #328EB8, #5665CD);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-family: "Archivo Black", sans-serif;
+    }
+}
 
 footer{
     background-color: black;
