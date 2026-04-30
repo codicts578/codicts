@@ -69,12 +69,17 @@ body{
     button{
         display: block;
         margin: 20px auto;
-        padding: 10px 120px;
+        padding: 10px 100px;
         border-radius: 7px;
         border: none;
         text-align: center;
         color: white;
         background-image: linear-gradient(to right, #328EB8, #793CE3);
+    }
+
+    a{
+        text-decoration: none;
+        width: 100%;
     }
 
     img{
@@ -98,6 +103,14 @@ body{
     border-radius: 15px;
     width: 70px;
 } 
+
+.free{
+    background-image: linear-gradient(to right, #7AE575, #1A7615);
+}
+
+.pro{
+    background-image: linear-gradient(to right, #3FB1E5, #793CE3);
+}
 
 .comingsoon{
     background-color: #252333;
