@@ -1,22 +1,25 @@
 // data.js
 const UI_COMPONENTS = [
-    { name: "Modern Navbar", category: "mystery", img: "images/components page/component1.png", tag: "Free" },
-    { name: "Gradient Button", category: "buttons", img: "images/components page/component2.png", tag: "Free" },
-    { name: "Glassmorphic Card", category: "cards", img: "images/components page/component3.png", tag: "Free" }
+    { name: "Modern Navbar", category: "mystery", img: "/frontend/images/Components Page/component1.png", tag: "FREE" },
+    { name: "Gradient Button", category: "buttons", img: "/frontend/images/Components Page/component2.png", tag: "FREE" },
+    { name: "Glassmorphic Card", category: "cards", img: "/frontend/images/Components Page/component3.png", tag: "FREE" }
 ];
 
-// This function builds the EXACT HTML structure from your CSS
 function generateCardHTML(item, isLiked) {
+    // Determine the tag class (free or pro) based on the tag text
+    const tagClass = item.tag.toLowerCase() === 'free' ? 'free' : 'pro';
+
     return `
         <div class="itemCard" dataName="${item.category}">
             <div class="itemImg">
                 <img src="${item.img}" alt="${item.name}">
-                <div class="tag">${item.tag}</div>
+                <div class="tag ${tagClass}">${item.tag}</div>
+                <!-- Heart MUST be inside itemImg for the CSS 'absolute' positioning to work -->
+                <i class="${isLiked ? 'fa-solid active' : 'fa-regular'} fa-heart like-icon" 
+                   data-name="${item.name}" 
+                   onclick="toggleLike(this, '${item.name}')"></i>
             </div>
             <button>View Component</button>
-            <i class="${isLiked ? 'fa-solid active' : 'fa-regular'} fa-heart like-icon" 
-               data-name="${item.name}" 
-               onclick="toggleLike(this, '${item.name}')"></i>
         </div>
     `;
 }
