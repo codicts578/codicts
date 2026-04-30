@@ -2,3 +2,19 @@ h2{
     text-align: center;
 }
 
+
+.heroPage{
+    background-image: none;
+}
+
+body{
+    background-image: url(/frontend/images/formPagesBg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-position: center center;
+    color: white;
+    background-color: #000000;
+    color: white;
+    font-family: "Manrope", sans-serif;
+}
