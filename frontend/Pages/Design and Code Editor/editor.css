@@ -14,10 +14,7 @@ body{
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 2rem;
-    overflow: hidden;
 }
-
-
 
 header{
     max-height: 80px;
@@ -30,7 +27,6 @@ header .navbar{
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin: 18px 0;
 
     img{
         max-width: 90px;
@@ -185,6 +181,11 @@ footer{
 
         li{
             padding: 10px 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
         }
     }
 
