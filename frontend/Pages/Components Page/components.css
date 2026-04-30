@@ -104,7 +104,7 @@ img{
 
     button{
         display: block;
-        margin: 10px 0;
+        margin: 0 0 10px 0;
         padding: 10px 60px;
         border-radius: 7px;
         border: none;
@@ -132,17 +132,40 @@ img{
     top: 10px;
     right: 10px;
     text-align: center;
-    background-color: forestgreen;
     color: white;
-    padding: 3px;
     border-radius: 15px;
-    width: 70px;
+    width: 60px;
+    height: 19px;
+    font-family: "Manuale", serif;
+    font-size: 14px;
 }
 
+.free{
+    background-image: linear-gradient(to right, #7AE575, #1A7615);
+}
 
+.pro{
+    background-image: linear-gradient(to right, #3FB1E5, #793CE3);
+}
+
+i{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.view{
+    display: flex;
+    gap: 50px;
+}
+
+.view button:hover{
+    cursor: pointer;
+}
 
 /* Gray empty heart */
 .like-icon {
+    margin: 6px 0 0 0;
     font-size: 24px;
     color: #ccc;
     cursor: pointer;
