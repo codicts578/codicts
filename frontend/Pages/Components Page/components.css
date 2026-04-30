@@ -11,6 +11,7 @@
     display: flex;
     margin: 30px 0;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 .searchInput{
@@ -36,6 +37,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    margin-top: -80px;
 }
 
 .componentContainer{
@@ -89,7 +91,7 @@ img{
 
     button{
         display: block;
-        margin: 10px 0;
+        margin: 5px 0 10px 0;
         padding: 10px 60px;
         border-radius: 7px;
         border: none;
@@ -97,6 +99,30 @@ img{
         color: white;
         background-image: linear-gradient(to right, rgb(122, 151, 247), rgb(109, 29, 207));
     }
+}
+
+/* Gray empty heart */
+.like-icon {
+    font-size: 32px;
+    color: #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    margin-top: 5px;
+}
+
+/* Red filled heart */
+.like-icon.active {
+    color: #ff4d4d !important; /* Force red color */
+}
+
+.like-icon.fa-solid {
+    font-weight: 900; /* Required for Font Awesome solid icons */
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
 }
 
 .itemImg{
@@ -124,21 +150,10 @@ img{
     width: 70px;
 }
 
-/* Gray empty heart */
-.like-icon {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s ease;
+.free{
+    background-image: linear-gradient(to right, #7AE575, #1A7615);
 }
 
-/* Red filled heart */
-.like-icon.active {
-    color: #ff4d4d !important; /* Force red color */
+.pro{
+    background-image: linear-gradient(to right, #3FB1E5, #793CE3);
 }
-
-.like-icon.fa-solid {
-    font-weight: 900; /* Required for Font Awesome solid icons */
-}
-
-
