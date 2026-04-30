@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script> <!-- script link for icons-->
+    <title>CODICTS | STARTER KITS</title>
+    <!-- Fonts & Icons -->
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
     </style>
@@ -12,144 +15,181 @@
     <title>CODICTS | STARTER KITS</title>
 </head>
 <body>
-    <section class="heroPage">
-        <header>
-            <div class="container">
-                <nav class="navbar">
-                    <h2>
-                        <a href="/index.html"><img src="/frontend/images/Logo.png" alt=""></a>
-                    </h2>
-                    <ul>
-                        <li><a href="/frontend/Pages/Components Page/components.html">Components</a></li>
-                        <li><a href="starterKit.html">Starter Kits</a></li>
-                        <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
-                    </ul>
-                    <div class="navAuth">
-                        <a href="/frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn">Sign Up</button></a>
-                        <a href="/frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn">Log In</button></a>
-                    </div>
-                </nav>
-            </div>
-        </header>
 
-        <section class="heroPg">
-            <div class="heroText">
-                <h1><strong class="gradient">MVP Starter Templates</strong> for Rapid Development</h1>
-                <p>Ready-to-use page templates for developers and designers. Copy, customize and launch you projects in hours, not days.</p>
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <a href="/index.html"><img src="/frontend/images/Logo.png" alt="CODICTS Logo"></a>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="/frontend/Pages/Components Page/components.html" class="nav-item">Components</a></li>
+                    <li><a href="starterKit.html" class="nav-item active">Starter Kits</a></li>
+                    <li><a href="/frontend/Pages/Subscription Page/payment.html" class="nav-item">Pricing</a></li>
+                </ul>
+
+                <div class="nav-auth">
+                    <a href="/frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
+                    <a href="/frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero-content">
+                <h1>
+                    <span class="gradient">Starter Templates</span> <br> 
+                    for Rapid Development
+                </h1>
+                <p>
+                    Pre-designed, ready-to-use website templates that help developers quickly build and launch real-world projects. 
+                    Designed as entry-level starter kits for rapid development.
+                </p>
             </div>
-        </section>
+        </div>
     </section>
 
-    <main id="componentsCollection">
-        <div class="componentContainer">
-            <div class="UIcollection">
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit1.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag free">FREE</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <a href=""><button>View Template <i class="fa-solid fa-arrow-right-long"></i></button></a>
+<main id="componentsCollection">
+    <div class="componentContainer">
+        <div class="UIcollection">
+            
+            <!-- Card 1 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="100">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit1.png" alt="Personal Portfolio">
                 </div>
+                <div class="kitTitle">
+                    <h4>Personal Portfolio</h4>
+                    <div class="tag free">FREE</div>
+                </div>
+                <p>Minimal portfolio template to showcase projects, skills, and personal brand.</p>
+                <a href="https://websitedemos.net/personal-portfolio-02/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit2.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag pro">PRO</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 2 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="200">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit2.png" alt="Portfolio & CV">
                 </div>
+                <div class="kitTitle">
+                    <h4>Portfolio & CV</h4>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <p>Professional portfolio with resume sections, experience, and project highlights.</p>
+                <a href="https://websitedemos.net/portfolio-02/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit3.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 3 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="300">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit3.png" alt="Digital Agency">
                 </div>
+                <div class="kitTitle">
+                    <h4>Digital Agency</h4>
+                    <div class="tag free">FREE</div>
+                </div>
+                <p>Modern agency template with services, portfolio, client testimonials, and contact sections.</p>
+                <a href="https://websitedemos.net/web-agency-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit4.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 4 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="100">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit4.png" alt="Service Website">
                 </div>
+                <div class="kitTitle">
+                    <h4>Service Website</h4>
+                    <div class="tag free">FREE</div>
+                </div>
+                <p>Clean service-based template with service listings, booking CTA, and customer trust sections.</p>
+                <a href="https://websitedemos.net/electrician-company-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit5.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 5 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="200">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit5.png" alt="Construction Company">
                 </div>
+                <div class="kitTitle">
+                    <h4>Construction Company</h4>
+                    <div class="tag free">FREE</div>
+                </div>
+                <p>Corporate-style template with project showcases, company info, and service offerings.</p>
+                <a href="https://websitedemos.net/brikly-construction-company-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit6.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 6 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="300">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit6.png" alt="Catering & Events">
                 </div>
+                <div class="kitTitle">
+                    <h4>Catering & Events</h4>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <p>Event-focused template with menu highlights, booking sections, and gallery showcase.</p>
+                <a href="https://websitedemos.net/catering-services-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit7.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 7 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="100">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit7.png" alt="Clothing Store">
                 </div>
+                <div class="kitTitle">
+                    <h4>Clothing Store</h4>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <p>E-commerce homepage with product collections, featured items, and shopping sections.</p>
+                <a href="https://websitedemos.net/clothing-store-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard">
-                    <div class="itemImg">
-                        <img src="/frontend/images/Starter Kit Page/starterkit8.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>SaaS Landing Page</h4>
-                        <div class="tag">Free</div>
-                    </div>
-                    <p>Complete landing page with hero, features, pricing and call-to-action sections. Ready to showcase your product.</p>
-                    <button>View Template</button>
+            <!-- Card 8 -->
+            <div class="itemCard" data-aos="fade-up" data-aos-delay="200">
+                <div class="itemImg">
+                    <img src="/frontend/images/Starter Kit Page/starterkit8.png" alt="Jewellery Store">
                 </div>
+                <div class="kitTitle">
+                    <h4>Jewellery Store</h4>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <p>Premium store template with elegant product display and luxury-focused design.</p>
+                <a href="https://websitedemos.net/jewellery-store-04/?customize=template" target="_blank" class="card-link">
+                    <button class="view-btn">View Template <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-                <div class="itemCard comingsoon">
-                    <div class="iconImage">
-                        <img src="/frontend/images/Starter Kit Page/comingsoon.png" alt="">
-                    </div>
-                    <div class="kitTitle">
-                        <h4>More coming soon</h4>
-                    </div>
-                    <p>Blog, Dashboard, Agency and more templates are in the works.</p>
+            <!-- Coming Soon Card -->
+            <div class="itemCard comingsoon" data-aos="zoom-in" data-aos-delay="300">
+                <div class="iconImage">
+                    <img src="/frontend/images/Starter Kit Page/comingsoon.png" alt="Coming Soon">
                 </div>
+                <div class="kitTitle center-title">
+                    <h4>More coming soon</h4>
+                </div>
+                <p>Blog, Dashboard, Agency and more templates are in the works.</p>
+            </div>
+
         </div>
-    </main>
+    </div>
+</main>
 
     <footer>
         <div class="footerContent">
@@ -184,6 +224,15 @@
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    
     <script src="/frontend/script.js"></script>
 </body>
 </html>
