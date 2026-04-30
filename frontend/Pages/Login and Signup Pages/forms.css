@@ -46,6 +46,7 @@ input{
     border: none;
     background-color: transparent;
     border: 2px white solid;
+    color: white;
 }
 
 .submitBtn{
