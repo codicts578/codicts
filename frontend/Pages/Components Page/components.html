@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/frontend/style.css">
     <link rel="stylesheet" href="components.css">
     <script src="components.js"></script>
+    
     <title>CODICTS | COMPONENTS</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
                         <li><a href="/frontend/Pages/Starter Kits Page/starterKit.html">Starter Kits</a></li>
                         <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
                     </ul>
-                    <div>
+                    <div class="navAuth">
                         <a href="/frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn">Sign Up</button></a>
                         <a href="/frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn">Log In</button></a>
                     </div>
@@ -62,9 +63,11 @@
                     <div class="itemImg">
                         <img src="/frontend/images/Components Page/component1.png" alt="">
                         <div class="tag free">FREE</div>
+                    </div>
+                    <div class="actions">
+                        <button>View Component</button>
                         <i class="fa-regular fa-heart like-icon" data-name="Modern Navbar" onclick="toggleLike(this, 'Modern Navbar')"></i>
                     </div>
-                    <button>View Component</button>
                 </div>
 
                 <div class="itemCard" dataName="mystery">
@@ -152,9 +155,9 @@
             <div class="products">
                 <h3>Products</h3>
                 <ul>
-                    <li>Components</li>
-                    <li>Starter Kits</li>
-                    <li>Pricing</li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="/frontend/Pages/Starter Kits Page/starterKit.html">Starter Kits</a></li>
+                    <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
                 </ul>
             </div>
 
@@ -173,5 +176,7 @@
             <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
         </div>
     </footer>
+
+    <script src="/frontend/script.js"></script>
 </body>
 </html>
