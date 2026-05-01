@@ -9,6 +9,9 @@
     </style>
     <link rel="stylesheet" href="frontend/style.css">
     <title>CODICTS | HOME</title>
+    <link rel="icon" type="image/png" href="frontend/images/icon.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <section class="heroPage">
@@ -20,7 +23,7 @@
                     </h2>
                     <ul>
                         <li><a href="frontend/Pages/Components Page/components.html">Components</a></li>
-                        <li><a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Kits</a></li>
+                        <li><a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
                         <li><a href="frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
                     </ul>
                     <div class="navAuth">
@@ -31,248 +34,347 @@
             </div>
         </header>
 
-        <section class="heroPg">
-            <div class="heroText">
-                <h1>DESIGN <strong class="purpleGradient">SMARTER</strong><br>CODE <strong class="blueGradient">FASTER</strong></h1>
-                <p>Codicts empowers aspiring developers and students to build real-world projects with professional-grade UI components and starter kits.</p>
-            </div>
-            <div class="heroBtn">
-                <a href="/frontend/Pages/Components Page/components.html"><button id="componentBtn">Explore Components</button></a>
-                <a href="/frontend/Pages/Starter Kits Page/starterKit.html"><button id="starterBtn">View Starter Kits</button></a>
-            </div>
-        </section>
-    </section>
-
-    <section id="builtfor">
-            <h4>Built for students and aspiring developers to learn UI design and build real-world projects faster.</h4>
-    </section>
-
-    <section class="howItWorks">
-        <h2>How Codicts Works</h2>
-        <div id="working">
-            <div class="box">
-                <h4>Preview</h4>
-                <p>Explore a curated collection of UI components and starter kits designed for modern applications.</p>
-            </div>
-
-            <div class="separate">
-                <img src="/frontend/images/arrow.png" alt="">
-            </div>
-
-            <div class="box">
-                <h4>Customize</h4>
-                <p>Modify styles, structure and layouts instantly while previewing changes in real time.</p>
-            </div>
-
-            <div class="separate">
-                <img src="/frontend/images/arrow.png" alt="">
-            </div>
-
-            <div class="box">
-                <h4>Export</h4>
-                <p>Export clean, production-ready code directly into your project.</p>
-            </div>
+<!-- Hero Section -->
+<section class="heroPage">
+    <div class="heroContent">
+        <div class="heroText" data-aos="fade-up" data-aos-duration="1000">
+            <h1>DESIGN <span class="purpleGradient">SMARTER</span><br>
+                CODE <span class="blueGradient">FASTER</span></h1>
+            <p>Codicts empowers aspiring developers and students to build real-world projects with professional-grade UI components and starter kits.</p>
         </div>
 
-        <div class="sectionBg"></div>
-
-        <div class="secondSection">
-            <h3>Everything You Need to Build Modern Interfaces</h3>
-            <p>A focused toolkit that simplifies UI development and accelerates real-world product creation.</p>
-
-            <div id="features">
-                <div class="feature blue">
-                    <img src="" alt="">
-                    <h4>Live Code Editing</h4>
-                    <p>Edit components in real time and instantly preview changes without disrupting your workflow.</p>
-                </div>
-
-                <div class="feature purple">
-                    <img src="" alt="">
-                    <h4>UI Components</h4>
-                    <p>Reusable elements designed for scalability, clean integration and high performance.</p>
-                </div>
-
-                <div class="feature purple">
-                    <img src="" alt="">
-                    <h4>MVP Starter Kits</h4>
-                    <p>Pre-built foundations to help you prototype and launch faster without starting from scratch.</p>
-                </div>
-
-                <div class="feature blue">
-                    <img src="" alt="">
-                    <h4>Multi-Framework Support</h4>
-                    <p>Export components in HTML, CSS, React and more, ready to integrate into any project.</p>
-                </div>
-            </div>
+        <div class="heroBtn" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <a href="frontend/Pages/Components Page/components.html">
+                <button id="componentBtn">Explore Components</button>
+            </a>
+            <a href="frontend/Pages/Starter Kits Page/starterKit.html">
+                <button id="starterBtn">View Starter Templates</button>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="explore">
-        <h2>Explore Modern UI Components</h2>
+<!-- Sleek Horizontal Banner -->
+<section id="builtfor-wrapper">
+    <div id="builtfor">
+        <h4>Built for students and aspiring developers to learn UI design and build real-world projects faster.</h4>
+    </div>
+</section>
+
+<section class="howItWorks">
+    <h2 data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> How <span class="blueGradient">Codicts</span> Works</h2>
+    
+    <div id="working">
+        <!-- Step 1 -->
+        <div class="box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-wrapper">
+                <i data-lucide="eye"></i>
+            </div>
+            <h4>Preview</h4>
+            <p>Explore a curated collection of UI components and starter kits designed for modern applications.</p>
+        </div>
+
+        <div class="separate" data-aos="fade-in" data-aos-delay="300">
+            <img src="/frontend/images/arrow.png" alt="arrow">
+        </div>
+
+        <!-- Step 2 -->
+        <div class="box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-wrapper">
+                <i data-lucide="layout"></i>
+            </div>
+            <h4>Customize</h4>
+            <p>Modify styles, structure and layouts instantly while previewing changes in real time.</p>
+        </div>
+
+        <div class="separate" data-aos="fade-in" data-aos-delay="400">
+            <img src="/frontend/images/arrow.png" alt="arrow">
+        </div>
+
+        <!-- Step 3 -->
+        <div class="box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-wrapper">
+                <i data-lucide="download"></i>
+            </div>
+            <h4>Export</h4>
+            <p>Export clean, production-ready code directly into your project.</p>
+        </div>
+    </div>
+</section>
+
+<section class="secondSection">
+    <div class="section-header" data-aos="fade-up" >
+        <h3>Everything You Need to Build <span class="purpleGradient">Modern Interfaces</span></h3>
+        <p>A focused toolkit that simplifies UI development and accelerates real-world product creation.</p>
+    </div>
+
+    <div id="features">
+        <!-- Feature 1: Live Code -->
+        <div class="feature blue-card" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="feature-icon">
+                <i data-lucide="code-2"></i>
+            </div>
+            <h4>Live Code Editing</h4>
+            <p>Edit components in real time and instantly preview changes without disrupting your workflow.</p>
+            <div class="glow-bg"></div>
+        </div>
+
+        <!-- Feature 2: UI Components -->
+        <div class="feature purple-card" data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="feature-icon">
+                <i data-lucide="layers"></i>
+            </div>
+            <h4>UI Components</h4>
+            <p>Reusable elements designed for scalability, clean integration and high performance.</p>
+            <div class="glow-bg"></div>
+        </div>
+
+<!-- Feature 3: MVP Templates -->
+<div class="feature purple-card" data-aos="zoom-in-up" data-aos-delay="300">
+    <div class="feature-icon">
+        <i data-lucide="layout-template"></i>
+    </div>
+    <h4>MVP Starter Templates</h4>
+    <p>Pre-built foundations to help you prototype and launch faster without starting from scratch.</p>
+    <div class="glow-bg"></div>
+</div>
+        <!-- Feature 4: Multi-Framework -->
+        <div class="feature blue-card" data-aos="zoom-in-up" data-aos-delay="400">
+            <div class="feature-icon">
+                <i data-lucide="cpu"></i>
+            </div>
+            <h4>Multi-Framework Support</h4>
+            <p>Export components in HTML, CSS, React and more, ready to integrate into any project.</p>
+            <div class="glow-bg"></div>
+        </div>
+    </div>
+</section>
+
+<section class="explore">
+    <div class="explore-header" data-aos="fade-up">
+        <h2>Explore Modern <span class="blueGradient">UI Components</span></h2>
         <p>Designed for contemporary dark interfaces and scalable digital products.</p>
+    </div>
 
-        <div class="exploreCards">
-            <div class="card card1">
-                <div class="cardHead card1Color"></div>
-                <div class="cardText card1Color"></div>
-                <div class="cardBody card1Color"></div>
-                
+    <div class="exploreCards">
+        <!-- Card 1: Gradient Button -->
+        <div class="card card-orange" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Gradient Button</h4>
-                <p>Buttons</p>
+                <span>Buttons</span>
             </div>
+        </div>
 
-            <div class="card card2">
-                <div class="cardHead card2Color"></div>
-                <div class="cardText card2Color"></div>
-                <div class="cardBody card2Color"></div>
-                
+        <!-- Card 2: Glass Card -->
+        <div class="card card-green" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Glass Card</h4>
-                <p>Cards</p>
+                <span>Cards</span>
             </div>
+        </div>
 
-            <div class="card card3">
-                <div class="cardHead card3Color"></div>
-                <div class="cardText card3Color"></div>
-                <div class="cardBody card3Color"></div>
-                
+        <!-- Card 3: Login Form -->
+        <div class="card card-red" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Login Form</h4>
-                <p>Login</p>
+                <span>Forms</span>
             </div>
+        </div>
 
-            <div class="card card4">
-                <div class="cardHead card4Color"></div>
-                <div class="cardText card4Color"></div>
-                <div class="cardBody card4Color"></div>
-                
+        <!-- Card 4: Navbar -->
+        <div class="card card-indigo" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Responsive Navbar</h4>
-                <p>Navbar</p>
+                <span>Navigation</span>
             </div>
+        </div>
 
-            <div class="card card5">
-                <div class="cardHead card5Color"></div>
-                <div class="cardText card5Color"></div>
-                <div class="cardBody card5Color"></div>
-                
+        <!-- Card 5: Hero -->
+        <div class="card card-blue" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Hero Banner</h4>
-                <p>Hero</p>
+                <span>Layout</span>
             </div>
+        </div>
 
-            <div class="card card6">
-                <div class="cardHead card6Color"></div>
-                <div class="cardText card6Color"></div>
-                <div class="cardBody card6Color"></div>
-                
+        <!-- Card 6: Footer -->
+        <div class="card card-yellow" data-aos="fade-up" data-aos-delay="600">
+            <div class="card-preview">
+                <div class="skeleton head"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton btn"></div>
+            </div>
+            <div class="card-info">
                 <h4>Footer Section</h4>
-                <p>Footer</p>
+                <span>Footer</span>
             </div>
         </div>
+    </div>
 
-        <div>
-            <a href="/frontend/Pages/Components Page/components.html"><button class="browseBtn">Browse All Components  -></button></a>
-        </div>
-    </section>
+    <div class="explore-footer" data-aos="zoom-in">
+        <a href="/frontend/Pages/Components Page/components.html" class="browseBtn">
+            Browse All Components <i data-lucide="arrow-right"></i>
+        </a>
+    </div>
+</section>
 
-    <section class="pricing">
-        <h2>Simple, Transparent Pricing</h2>
-        <p>Start free and upgrade when you need access to the full component library and advanced starter kits.</p>
+<section class="pricing" id="pricing">
+    <div class="pricing-header" data-aos="fade-up">
+        <h2>Simple, Transparent <span class="blueGradient">Pricing</span></h2>
+        <p>Start free and upgrade when you need access to the full component library.</p>
+    </div>
 
-        <div id="priceSection">
-            <div class="priceCard">
+    <div id="priceSection">
+        <!-- Free Plan -->
+        <div class="priceCard side-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-content">
                 <h4>Free</h4>
                 <p>Perfect for exploring Codicts and building small projects.</p>
-
-                <h3><strong>$0</strong>/month</h3>
-                <a href="/frontend/Pages/Components Page/components.html"><button>Get Started</button></a>
-
-                <ul>
-                    <li>Limited access to UI components</li>
-                    <li>View design + code split screen</li>
+                <h3><strong>$0</strong><span>/month</span></h3>
+                <a href="/frontend/Pages/Components Page/components.html">
+                    <button class="priceBtn secondaryBtn">Get Started</button>
+                </a>
+                <ul class="tick-list">
+                    <li>Limited UI components</li>
+                    <li>Split-screen view</li>
                     <li>Copy HTML/CSS code</li>
-                    <li>Download design image</li>
-                    <li>Basic search and category browsing</li>
+                    <li>Basic search tools</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="popularPriceCard">
-                <div class="popular">
-                    <h5>POPULAR</h5>
-                </div>
-
-                <div class="proCard">
+        <!-- Pro Plan -->
+        <div class="popularPriceCard" data-aos="fade-up" data-aos-delay="200">
+            <div class="popular-badge">POPULAR</div>
+            <div class="proCard">
+                <div class="card-content">
                     <h4>Pro</h4>
-                <p>Everything you need to build and launch real projects faster.</p>
-
-                <h3><strong>$9</strong>/month</h3>
-                <a href="/frontend/Pages/Subscription Page/payment.html"><button>Subscribe Pro</button></a>
-
-                <ul>
-                    <li>Access to full component library</li>
-                    <li>Multiple frameworks(HTML, CSS, React)</li>
-                    <li>Download code files</li>
-                    <li>Customization tools</li>
-                    <li>New components added weekly</li>
-                    <li>Starter Kit for beginners</li>
-                </ul>
+                    <p>Everything you need to build and launch real projects faster.</p>
+                    <h3><strong>$9</strong><span>/month</span></h3>
+                    <a href="/frontend/Pages/Subscription Page/payment.html">
+                        <button class="priceBtn primaryBtn">
+                            <span>Subscribe Pro</span>
+                        </button>
+                    </a>
+                    <ul class="tick-list highlight-ticks">
+                        <li>Full component library</li>
+                        <li>React & Framework support</li>
+                        <li>Download source files</li>
+                        <li>Weekly new components</li>
+                        <li>Advanced Starter Kits</li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <div class="priceCard">
+        <!-- Team Plan -->
+        <div class="priceCard side-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-content">
                 <h4>Team Plan</h4>
-                <p>Perfect for exploring Codicts and building small projects.</p>
-
-                <h3><strong>$12</strong>/month</h3>
-                <a href="/frontend/Pages/Subscription Page/payment.html"><button>Get Started</button></a>
-
-                <ul>
+                <p>Collaborative tools for growing teams and agencies.</p>
+                <h3><strong>$12</strong><span>/month</span></h3>
+                <a href="/frontend/Pages/Subscription Page/payment.html">
+                    <button class="priceBtn secondaryBtn">Get Started</button>
+                </a>
+                <ul class="tick-list">
                     <li>Everything in Pro</li>
                     <li>Team collaboration</li>
                     <li>Unlimited downloads</li>
-                    <li>Advanced UI components</li>
                     <li>Full design kits</li>
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="getStartedBanner">
-        <h2>START BUILDING TODAY</h2>
-        <p>Accelerate your worklflow and create modern, production-ready interfaces in minutes.</p>
-        <a href="/frontend/Pages/Components Page/components.html"><button>Get Started Free</button></a>
-    </section>
+<section id="getStartedBanner">
+    <div class="cta-glow"></div>
+    <div class="cta-content" data-aos="fade-up">
+        <h2>START BUILDING <span class="blueGradient">TODAY</span></h2>
+        <p>Accelerate your workflow and create modern, production-ready interfaces in minutes.</p>
+        <div class="cta-action">
+            <a href="/frontend/Pages/Components Page/components.html">
+                <button class="cta-primary-btn">
+                    <span>Get Started Free</span>
+                    <div class="btn-shimmer"></div>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <div class="footerContent">
-            <div class="intro">
-                <h3>CODICTS</h3>
-                <p>Codicts provides modern UI components and MVP starter kits designed to help developers and students build interfaces faster and more efficiently.</p>
-                <p class="slogan">Design smarter. Code faster.</p>
-            </div>
+<footer>
+    <div class="footerContent">
+        <div class="intro">
+            <h3>CODICTS</h3>
+            <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
+            <p class="slogan">Design smarter. Code faster.</p>
+        </div>
 
-            <div class="products">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="frontend/Pages/Components Page/components.html">Components</a></li>
-                    <li><a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Kits</a></li>
-                    <li><a href="frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
-                </ul>
-            </div>
+        <div class="products">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="/frontend/Pages/Components Page/components.html">Components</a></li>
+                <li><a href="/frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
+                <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
+            </ul>
+        </div>
 
-            <div class="contact">
-                <h3>Connect</h3>
-                <p>Follow Codicts for product updates, new components and UI inspiration</p>
-
-                <a href="https://www.instagram.com/_codicts_?igsh=MXdmb3A1eTA1dTB1aw=="><i class="fa-brands fa-instagram"></i></a>
+        <div class="contact">
+            <h3>Connect</h3>
+            <p>Follow Codicts for product updates, new components and UI inspiration</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_codicts_"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61575483250009"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@_codicts_?_r=1&_t=ZS-9542Ry70N8P"><i class="fa-brands fa-tiktok"></i></a>
-                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.tiktok.com/@_codicts_"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
-        </div>
-    </footer>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 1000,      
+    easing: 'ease-out-quad', 
+    once: true,         
+    offset: 120,
+  });
+</script>
+
+<!-- Initialize Lucide Icons -->
+<script>
+  lucide.createIcons();
+</script>
 
     <script src="frontend/script.js"></script>
 </body>
