@@ -388,7 +388,7 @@ footer {
 }
 
 .starter-paywall-modal {
-    background: #1e293b;
+    background: #252333;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -411,13 +411,14 @@ footer {
 }
 
 .upgrade-modal-btn {
-    background: #3b82f6;
+    background: #006FCF;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 15px;
 }
 
 .close-modal {
@@ -427,6 +428,7 @@ footer {
     padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .upgrade-modal-btn:hover { background: #2563eb; }
