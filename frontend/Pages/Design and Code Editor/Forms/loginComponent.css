@@ -331,3 +331,51 @@ textarea.code-textarea {
 @media (max-width: 900px) {
     .split-container { flex-direction: column; }
 }
+
+
+
+/* Container for the code part */
+.code-editor-container {
+    position: relative; /* Needed for absolute positioning of the lock */
+}
+
+/* The actual editor area */
+.code-editor-area {
+    transition: filter 0.3s ease;
+}
+
+/* Blur Class */
+.locked-blur {
+    filter: blur(15px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* The Lock Overlay */
+.paywall-lock {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* Match your editor background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.paywall-lock button {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: 'Manrope', sans-serif;
+}
