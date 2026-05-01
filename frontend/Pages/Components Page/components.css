@@ -293,3 +293,133 @@
         width: 95%;
     }
 }
+
+footer {
+    background-color: #000;
+    color: white;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Force left alignment for everything inside the footer */
+    text-align: left; 
+}
+
+.footerContent {
+    display: grid;
+    /* 2fr 1fr 1fr makes the first column wider and others snug to the left */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 60px;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    /* Ensures the grid cells themselves start from the left */
+    justify-content: start; 
+    align-items: start;
+}
+
+/* Force left alignment on all text blocks to override any global 'center' styles */
+.intro, .products, .contact {
+    text-align: left;
+}
+
+.footerContent h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footerContent p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.intro .slogan {
+    font-weight: 800; 
+    font-size: 1.1rem;
+    display: inline-block;
+    
+    /* Gradient Effect */
+    background: linear-gradient(90deg, #3FB1E5 0%, #b60890 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    
+    filter: drop-shadow(0 0 5px rgba(63, 177, 229, 0.2));
+    
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* List Styling */
+.footerContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Explicitly left */
+}
+
+.footerContent ul li {
+    margin-bottom: 12px;
+}
+
+.footerContent ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    display: inline-block; /* Helps with alignment */
+}
+
+.footerContent ul li a:hover {
+    color: white;
+    transform: translateX(8px); /* Cleaner than padding-left */
+}
+
+/* Social Links - Left Aligned Flexbox */
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* Forces icons to the left */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-links i {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+}
+
+.social-links i:hover {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Copyright - The ONLY centered part */
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile Fixes */
+@media (max-width: 900px) {
+    .footerContent {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footerContent {
+        grid-template-columns: 1fr;
+    }
+    .intro, .products, .contact {
+        max-width: 100%;
+    }
+}
