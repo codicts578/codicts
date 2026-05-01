@@ -1,3 +1,135 @@
+/* --- Navigation Bar --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 10, 15, 0.8); 
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(121, 60, 227, 0.15);
+    padding: 5px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    position: relative;
+}
+
+/* --- Proper Logo Display --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a img {
+    height: 50px; /* Fixed height to keep it consistent */
+    width: auto;  /* Auto width maintains aspect ratio */
+    object-fit: contain; /* Ensures the image isn't stretched or cropped */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.nav-logo a img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Auth Buttons Gap --- */
+/* --- Auth Buttons Container --- */
+.navAuth {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust this value (e.g., 20px, 25px) to get the perfect distance */
+}
+
+/* Your existing button styles remain the same */
+#signupBtn, #loginBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#signupBtn {
+    background: linear-gradient(135deg, #328EB8 0%, #793CE3 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(121, 60, 227, 0.2);
+}
+
+#loginBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border */
+    color: white;
+}
+
+#signupBtn:hover, #loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(121, 60, 227, 0.4);
+}
+
+/* --- Center Menu Items --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 45px; 
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E55EEE, #006FCF);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
 /* --- Hero Section Styling --- */
 .heroPg {
     display: flex;
