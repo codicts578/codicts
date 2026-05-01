@@ -1,0 +1,559 @@
+body{
+    background-image: url(/frontend/images/formPagesBg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-position: center center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000000;
+    color: white;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header{
+    max-height: 80px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    img{
+        max-width: 90px;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        li{
+            padding: 0 3rem;
+
+            a{
+                font-size: 15px;
+                color: white;
+                letter-spacing: 2px;
+                text-decoration: none;
+
+                a:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+#signupBtn, #loginBtn{
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#signupBtn{
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #328EB8, #793CE3);
+}
+
+#loginBtn{
+    background-color: transparent;
+    color: white;
+    border: 1px white solid;
+}
+
+.heroPg{
+    margin-top: 150px;
+    justify-items: center;
+}
+
+.heroText{
+    max-width: 80%;
+
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    p{
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+
+.heroPg{
+    margin-top: 80px;
+}
+
+h5{
+    font-size: 15px;
+}
+
+
+
+.info{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 90%;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.description{
+    background-color: transparent;
+    border: #793CE3 solid 3px;
+    width: 100%;
+}
+
+.details{
+    background-color: white;
+    color: #000;
+    border-radius: 20px;
+}
+
+.loginContainer{
+    background-image: none;
+    border: none;
+
+    button{
+        width: 100%;
+        border-radius: 12px;
+        background-image: linear-gradient(to right, #328EB8, #793CE3);
+    }
+
+    input{
+        padding: 0;
+    }
+}
+
+.tag{
+    width: 150px;
+    background-color: #793ce38d;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    padding: 50px;
+}
+
+.footerContent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    h3{
+        font-size: 22px;
+    }
+
+    p{
+        padding: 15px 0;
+    }
+
+    .slogan{
+        font-weight: bolder;
+    }
+
+    ul{
+        list-style-type: none;
+        padding: 10px 0;
+
+        li{
+            padding: 10px 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    i{
+        font-size: 25px;
+        padding-right: 50px;
+    }
+
+    i{
+        font-size: 25px;
+        padding-right: 50px;
+        color: white;
+    }
+
+    i:hover,
+    i:focus,
+    i:active {
+        color: white !important;
+        fill: white !important;
+        outline: none; /* Removes the focus ring mentioned earlier */
+    }
+}
+
+.copyright{
+    text-align: center;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, 'Segoe UI', 'Roboto', sans-serif;
+    background: #0b1120;
+    color: #e2e8f0;
+}
+
+.split-container {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* ========= LEFT PANEL: BUTTON DESIGN ========= */
+.design-panel {
+    flex: 1.2;
+    background: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #334155;
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.editable-toolbar {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    max-height: 50%;
+    overflow-y: auto;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 5px 10px;
+    border-radius: 48px;
+    border: 1px solid #e2e8f0;
+}
+
+.tool-group label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e293b;
+}
+
+.tool-group input, .tool-group select {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+    padding: 5px;
+    border-radius: 32px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.tool-group input[type="color"] {
+    width: 30px;
+    height: 28px;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+.tool-group input[type="range"] {
+    width: 100px;
+}
+
+.design-header {
+    padding: 0.8rem 1.5rem;
+    background: #ffffffcc;
+    backdrop-filter: blur(4px);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.design-header span {
+    background: #3b82f6;
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    font-size: 0.7rem;
+}
+
+.design-canvas {
+    flex: 1;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.button-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.preview-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    font-weight: 600;
+    background: white;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+}
+
+.live-button {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    font-family: inherit;
+    text-align: center;
+}
+
+/* ========= RIGHT PANEL ========= */
+.code-panel {
+    flex: 1.4;
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.code-header {
+    padding: 0.8rem 1.2rem;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.code-header h3 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #0f172a;
+    padding: 0.3rem 1rem;
+    border-radius: 24px;
+}
+
+.action-group {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.code-action-btn {
+    background: #334155;
+    border: none;
+    color: white;
+    padding: 0.3rem 1.2rem;
+    border-radius: 24px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.code-action-btn.primary {
+    background: #3b82f6;
+}
+.code-action-btn.export {
+    background: transparent;
+}
+
+.code-action-btn.download {
+    background: transparent;
+}
+.code-action-btn:hover {
+    filter: brightness(1.1);
+}
+
+.code-editor-container {
+    flex: 1;
+    background: #0a0f1c;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.editor-tabs {
+    display: flex;
+    background: #111827;
+    border-bottom: 1px solid #1f2937;
+    padding-left: 1rem;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.1s;
+    font-family: monospace;
+}
+
+.tab-btn.active {
+    color: #3b82f6;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.code-editor-area {
+    flex: 1;
+    overflow: auto;
+}
+
+textarea.code-textarea {
+    width: 100%;
+    height: 100%;
+    background: #0a0f1c;
+    color: #e2e8f0;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    border: none;
+    resize: none;
+    padding: 1.2rem;
+    outline: none;
+    white-space: pre-wrap;
+}
+
+.sync-status {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.8rem;
+    background: #0f172a;
+    border-radius: 20px;
+    color: #10b981;
+}
+
+@media (max-width: 900px) {
+    .split-container { flex-direction: column; }
+}
+
+.exports{
+    background-color: #8a9793;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    justify-items: center;
+    
+    button{
+        margin: 0 50px;
+        padding: 10px 100px;
+        border-radius: 5px;
+        border: 1px solid white;
+        
+    }
+}
+
+
+
+
+
+/* Container for the code part */
+.code-editor-container {
+    position: relative; /* Needed for absolute positioning of the lock */
+}
+
+/* The actual editor area */
+.code-editor-area {
+    transition: filter 0.3s ease;
+}
+
+/* Blur Class */
+.locked-blur {
+    filter: blur(15px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* The Lock Overlay */
+.paywall-lock {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* Match your editor background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.paywall-lock button {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: 'Manrope', sans-serif;
+}

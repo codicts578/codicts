@@ -43,7 +43,7 @@
     </section>
 
     <section class="loginContainer info">
-        <form class="details"> 
+        <form class="details" action="/process-payment" method="POST"> 
             <section>
                 <h5>ACCOUNT INFORMATION</h5>
                 <div class="formGroup">
@@ -110,7 +110,7 @@
                 </div>
             </section>
             
-
+            <input type="hidden" name="redirectPath" id="redirectPath">    
             <button type="submit" class="submitBtn">Subscribe to Pro <i class="fa-solid fa-arrow-right-long"></i></button>
         </form>
 
@@ -176,6 +176,11 @@
     </div>
 </footer>
 
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('redirectPath').value = urlParams.get('redirect') || '/';
+    </script>
+    
     <script src="/frontend/script.js"></script>
 </body>
 </html>

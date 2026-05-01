@@ -94,3 +94,47 @@ document.addEventListener('DOMContentLoaded', async () => {
         return generateCardHTML(item, isLiked);
     }).join('');
 });
+
+
+
+
+async function checkProAccess() {
+    const codeArea = document.querySelector('.code-content');
+    const codeWrapper = document.querySelector('.code-wrapper');
+
+    if (!codeArea) return;
+
+    try {
+        const response = await fetch('/check-auth');
+        const status = await response.json();
+
+        if (status.loggedIn && status.isPaid) {
+            // USER HAS PAID: Remove blur
+            codeArea.classList.remove('blurred');
+            const overlay = document.querySelector('.unlock-overlay');
+            if (overlay) overlay.remove();
+        } else {
+            // USER HAS NOT PAID: Apply blur and show overlay
+            codeArea.classList.add('blurred');
+            
+            // Add overlay if it doesn't exist
+            if (!document.querySelector('.unlock-overlay')) {
+                const overlay = document.createElement('div');
+                overlay.className = 'unlock-overlay';
+                overlay.innerHTML = `
+                    <i class="fa-solid fa-lock" style="font-size: 2rem;"></i>
+                    <p>This is a PRO component</p>
+                    <button class="unlock-btn" onclick="window.location.href='/frontend/Pages/Subscription Page/payment.html'">
+                        Unlock with Pro
+                    </button>
+                `;
+                codeWrapper.appendChild(overlay);
+            }
+        }
+    } catch (err) {
+        console.error("Auth check failed", err);
+    }
+}
+
+// Call this function whenever a component is viewed
+document.addEventListener('DOMContentLoaded', checkProAccess);
