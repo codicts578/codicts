@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+    <link rel="stylesheet" href="/frontend/style.css">
     <link rel="stylesheet" href="components.css">
     <script src="components.js"></script>
     <link rel="icon" type="image/png" href="../../../frontend/images/icon.png">
@@ -12,24 +13,28 @@
 </head>
 <body>
     <section class="heroPage">
-        <header>
-            <div class="container">
-                <nav class="navbar">
-                    <h2>
-                        <a href="/index.html"><img src="/frontend/images/Logo.png" alt=""></a>
-                    </h2>
-                    <ul>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="/frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
-                        <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
-                    </ul>
-                    <div class="navAuth">
-                        <a href="/frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn">Sign Up</button></a>
-                        <a href="/frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn">Log In</button></a>
-                    </div>
-                </nav>
+<header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                 <div class="nav-logo">
+                <a href="../../../index.html">
+                    <img src="../../../frontend/images/Logo.png" alt="CODICTS Logo">
+                </a>
             </div>
-        </header>
+
+                <ul class="nav-links">
+                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                    <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                    <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
+                </ul>
+
+                <div class="navAuth">
+                    <a href="../Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
+                    <a href="../Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
         <section class="heroPg">
     <div class="container hero-content">
