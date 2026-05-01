@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema({
     isPaid: { type: Boolean, default: false } // NEW: Defaults to false
 
 });
+
 const User = mongoose.model('User', userSchema);
 
 // --- ROUTES ---
@@ -54,7 +55,7 @@ app.post('/signup', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, email, password: hashedPassword });
         await newUser.save();
-        res.redirect('/loginPage.html'); 
+        res.redirect('/frontend/Pages/Login and Signup Pages/login.html'); 
     } catch (error) {
         res.send("Error: Email already exists.");
     }
@@ -65,7 +66,7 @@ app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
-            return res.send("User not found. <a href='signupPage.html'>Create an account</a>");
+            return res.send("User not found. <a href='/frontend/Pages/Login and Signup Pages/signup.html'>Create an account</a>");
         }
 
         const isMatch = await bcrypt.compare(req.body.password, user.password);
@@ -77,21 +78,13 @@ app.post('/login', async (req, res) => {
             // REDIRECT TO HOMEPAGE (index.html)
             res.redirect('index.html'); 
         } else {
-            res.send("Invalid password. <a href='loginPage.html'>Try again</a>");
+            res.send("Invalid password. <a href='login.html'>Try again</a>");
         }
     } catch (error) {
         res.status(500).send("An error occurred during login.");
     }
 });
 
-// 3. NEW ROUTE: Checks if user is logged in (used by frontend)
-app.get('/check-auth', (req, res) => {
-    if (req.session.userId) {
-        res.json({ loggedIn: true, username: req.session.username });
-    } else {
-        res.json({ loggedIn: false });
-    }
-});
 
 // 4. NEW ROUTE: Logout
 app.get('/logout', (req, res) => {
@@ -131,11 +124,64 @@ app.post('/like-item', async (req, res) => {
 
 // Route to get all liked items for the "Saved" page
 app.get('/my-likes', async (req, res) => {
-    if (!req.session.userId) return res.redirect('/loginPage.html');
+    if (!req.session.userId) return res.redirect('/login.html');
     
     const user = await User.findById(req.session.userId);
     res.json({ likes: user.likes });
 });
 
 const PORT = 3000;
+
+app.get('/check-auth', async (req, res) => {
+    console.log("Session ID checking auth:", req.session.userId); // Debug log
+    
+    if (!req.session.userId) {
+        return res.json({ loggedIn: false });
+    }
+
+    try {
+        const user = await User.findById(req.session.userId);
+        if (!user) return res.json({ loggedIn: false });
+
+        console.log(`Sending to frontend -> User: ${user.username}, Paid: ${user.isPaid}`);
+        
+        res.json({ 
+            loggedIn: true, 
+            username: user.username, 
+            isPaid: !!user.isPaid // The !! forces it to be true or false
+        });
+    } catch (error) {
+        console.error("Auth route error:", error);
+        res.status(500).json({ loggedIn: false });
+    }
+});
+
+// --- NEW PAYMENT ROUTE ---
+app.post('/process-payment', async (req, res) => {
+    if (!req.session.userId) return res.send("Please login.");
+
+    // Capture the path from the hidden input
+    const redirectTo = req.body.redirectPath || '/index.html'; 
+
+    try {
+        await User.findByIdAndUpdate(req.session.userId, { isPaid: true });
+        req.session.isPaid = true; 
+
+        req.session.save((err) => {
+            if (err) return res.status(500).send("Error saving session.");
+            
+            res.send(`
+                <script>
+                    alert('Success! Account upgraded to PRO.');
+                    // Go back to the specific component page!
+                    window.location.href = '${redirectTo}';
+                </script>
+            `);
+        });
+    } catch (error) {
+        res.status(500).send("Update failed.");
+    }
+});
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
