@@ -6,7 +6,7 @@
 
 body {
     background-color: #0b0a0f; /* Fallback color */
-    background-image: url(/frontend/images/bgImg.png);
+    background-image: url(../../../frontend/images/bgImg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

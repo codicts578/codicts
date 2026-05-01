@@ -1,6 +1,6 @@
 body {
     /* Background Image setup */
-    background-image: url(/frontend/images/formPagesBg.png);
+    background-image: url(../../../frontend/images/formPagesBg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
