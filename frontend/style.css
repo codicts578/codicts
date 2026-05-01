@@ -236,21 +236,46 @@ header {
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Added "pop" timing */
     border: 1px solid transparent;
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Component Button - Purple Theme */
 #componentBtn {
     background: rgba(191, 63, 199, 0.15);
     border: 1px solid rgba(191, 63, 199, 0.4);
     backdrop-filter: blur(12px);
 }
 
+#componentBtn:hover {
+    background: rgba(191, 63, 199, 0.3);
+    border-color: rgba(191, 63, 199, 0.8);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(191, 63, 199, 0.3), 
+                0 0 15px rgba(191, 63, 199, 0.2);
+}
+
+/* Starter Button - Blue Theme */
 #starterBtn {
     background: rgba(50, 142, 184, 0.15);
     border: 1px solid rgba(50, 142, 184, 0.4);
     backdrop-filter: blur(12px);
+}
+
+#starterBtn:hover {
+    background: rgba(50, 142, 184, 0.3);
+    border-color: rgba(50, 142, 184, 0.8);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(50, 142, 184, 0.3), 
+                0 0 15px rgba(50, 142, 184, 0.2);
+}
+
+/* Optional: Active Click State */
+#componentBtn:active, #starterBtn:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 /* --- Edge-to-Edge Horizontal Banner --- */
