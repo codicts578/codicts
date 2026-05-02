@@ -391,34 +391,106 @@ textarea.code-textarea {
 
 
 
-/* Full screen overlay - NO BLUR */
+/* 1. The Dimmer (Keep this translucent so you can see the site behind it) */
 .paywall-full-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* Dim the background, but don't blur */
+    background: rgba(0, 0, 0, 0.75); /* Dimmed background */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* High enough to stay on top */
+    z-index: 1000;
 }
 
-/* Ensure the popup box is solid */
-.paywall-lock {
-    background: #000000; /* Or your site's dark color */
+/* 2. The Popup Box (Make THIS solid/opaque) */
+.paywall-full-overlay .paywall-lock {
+    background: #111827 !important; /* Solid dark background - No transparency */
     color: white;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    border: 1px solid #334155; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8); /* Heavy shadow to pop */
+    width: 380px;
+    height: auto;
+    opacity: 1 !important; /* Ensure the box itself is 100% visible */
 }
 
-/* Blur only for the code area when PRO tab is clicked */
+/* 3. Button Styles (Ensuring they look solid) */
+.paywall-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.upgrade-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.close-btn {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+
+
+
+
+
+
+
+
+/* Update the area to allow smooth blurring */
+.code-editor-area {
+    transition: filter 0.4s ease-in-out; /* Smooths the blur transition */
+}
+
+/* Update the blur class */
 .locked-blur {
-    filter: blur(12px) !important;
+    filter: blur(15px);
     pointer-events: none;
+    user-select: none;
+}
+
+/* Update the Lock Overlay for a fade-in effect */
+.paywall-lock {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.8); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
+    /* Animation for the fade-in */
+    animation: fadeInLock 0.4s ease-out forwards;
+}
+
+/* Keyframes for the smooth fade */
+@keyframes fadeInLock {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+    }
 }
