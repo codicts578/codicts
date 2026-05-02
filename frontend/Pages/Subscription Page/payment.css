@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(/frontend/images/formPagesBg.png);
+    background-image: url(../../..//frontend/images/formPagesBg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%; 
@@ -26,61 +26,136 @@ button{
     padding: 0 2rem;
 }
 
-header{
-    max-height: 80px;
+/* --- Navigation Bar --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 10, 15, 0.8); /* Slightly more opaque for visibility */
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(121, 60, 227, 0.15);
+    padding: 5px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
     position: relative;
 }
 
-header .navbar{
+/* --- Proper Logo Display --- */
+.nav-logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin: 18px 0;
-
-    img{
-        max-width: 90px;
-    }
-
-    ul{
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-
-        li{
-            padding: 0 3rem;
-
-            a{
-                font-size: 15px;
-                color: white;
-                letter-spacing: 2px;
-                text-decoration: none;
-
-                a:hover{
-                    color: white;
-                }
-            }
-        }
-    }
 }
 
-#signupBtn, #loginBtn{
-    padding: 8px 20px;
-    border-radius: 5px;
-    text-align: center;
+.nav-logo a {
+    display: flex;
+    align-items: center;
 }
 
-#signupBtn{
-    color: white;
+.nav-logo a img {
+    height: 50px; /* Fixed height to keep it consistent */
+    width: auto;  /* Auto width maintains aspect ratio */
+    object-fit: contain; /* Ensures the image isn't stretched or cropped */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.nav-logo a img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Auth Buttons Gap --- */
+/* --- Auth Buttons Container --- */
+.navAuth {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust this value (e.g., 20px, 25px) to get the perfect distance */
+}
+
+/* Your existing button styles remain the same */
+#signupBtn, #loginBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#signupBtn {
+    background: linear-gradient(135deg, #328EB8 0%, #793CE3 100%);
     border: none;
-    background-image: linear-gradient(to right, #328EB8, #793CE3);
-    margin-right: 15px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(121, 60, 227, 0.2);
 }
 
-#loginBtn{
-    background-color: transparent;
+#loginBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border */
     color: white;
-    border: 1px white solid;
+}
+
+#signupBtn:hover, #loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(121, 60, 227, 0.4);
+}
+
+/* --- Center Menu Items --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 45px; 
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E55EEE, #006FCF);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
 }
 
 .user-menu-container {
@@ -156,19 +231,18 @@ header .navbar{
     color: #ff4d4d !important;
 }
 
-/* 1. Ensure the parent doesn't 'clip' the menu */
 .user-menu-container {
     position: relative;
     display: inline-block;
-    overflow: visible !important; /* Critical: prevents hiding the dropdown */
+    overflow: visible !important;
 }
 
-/* 2. Force the dropdown to be on top of everything */
+
 .user-dropdown-content {
     display: none; 
     position: absolute;
     right: 0;
-    top: 110%; /* Places it just below the button */
+    top: 110%; 
     background-color: #ffffff;
     min-width: 180px;
     box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
@@ -177,13 +251,11 @@ header .navbar{
     border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* 3. The toggle class */
+
 .user-dropdown-content.show {
     display: block !important;
 }
 
-
-/* Ensure the auth wrapper allows the menu to float outside */
 .navAuth{
     position: relative;
     display: flex;
@@ -211,7 +283,6 @@ header .navbar{
     gap: 10px;
 }
 
-/* THE DROPDOWN - This is the part that usually fails */
 .user-dropdown-content {
     display: none; 
     position: absolute;
@@ -241,232 +312,283 @@ header .navbar{
     font-size: 14px;
 }
 
-
-.heroPg{
-    margin-top: 150px;
-    justify-items: center;
+/* --- Variables & Reset --- */
+:root {
+    --glass-white: rgba(255, 255, 255, 0.85);
+    --deep-dark: #050505;
+    --accent-purple: #8254E5;
+    --accent-blue: #417CBF;
 }
 
-.heroText{
-    max-width: 80%;
+.heroPg {
+    margin-top: 130px;
     text-align: center;
-
-    h1{
-        font-family: "Archivo Black", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        text-align: center;
-        color: white;
-        font-size: 50px;
-    }
-
-    .gradient{
-        background-image: linear-gradient(to right, #4CC8DD, #7F18E5);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        color: transparent;
-        display: inline-block;
-    }
+    margin-bottom: 40px;
 }
 
-
-.heroPg{
-    margin-top: 80px;
+.heroText h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 50px;
+    color: white;
 }
 
-h5{
-    font-size: 15px;
+.heroText .gradient {
+    background: linear-gradient(to right, #4CC8DD, #7F18E5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.payHead{
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.checkout-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: transparent; 
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 40px;
+    overflow: hidden; 
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+}
+
+/* --- Left Side: Form --- */
+.payment-form {
+    padding: 50px;
+    background: #fff; 
+    z-index: 1;
+}
+
+.form-part h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.input-box {
+    border: 1px solid #888;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-box label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 2px;
+}
+
+.input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+    background: transparent;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-row .input-box {
+    flex: 1;
+}
+
+.pay-header {
     display: flex;
     justify-content: space-between;
-
-    .cardLogo{
-        padding-top: 10px;
-
-        img{
-            padding-right: 5px;
-            width: 50px;
-        }
-    }
+    align-items: center;
 }
 
-.formGroup{
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 5px;
-    margin: 10px 0;
+.card-icons img {
+    width: 38px;
+    margin-left: 5px;
 }
 
-input{
-    color: black;
+.pay-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(65, 124, 191, 0.3);
+    /* Transition everything for smoothness */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-    -webkit-text-fill-color: #333;  
-    transition: background-color 5000s ease-in-out 0s;
+.pay-btn:hover {
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 15px 30px rgba(130, 84, 229, 0.5);
+    filter: brightness(1.1);
 }
 
-input:focus {
-    outline: none;
-    border-radius: 0%;
+.pay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
 }
 
+.pay-btn:hover::after {
+    left: 120%; 
+}
 
-.split{
+.pay-btn:active {
+    transform: translateY(-1px) scale(0.98); 
+    box-shadow: 0 5px 10px rgba(130, 84, 229, 0.3);
+}
+
+/* --- Right Side--- */
+.plan-summary {
+    /* Semi-transparent black */
+    background: rgba(5, 5, 5, 0.7); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    color: #fff;
+    padding: 60px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     
-    input{
-        padding: 10px 20px;
-        margin: 0;
-    }
+    /* Margin is now 0 so it touches the card edge */
+    margin: 0; 
+    /* Purple border on the top, right, and bottom only (or all around) */
+    border: 2px solid #5E17EB;
+    border-left: none; /* Optional: hides the purple line where it meets the white form */
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-.info{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+.plan-badge {
+    background: #1a0b3a;
+    color: var(--accent-purple);
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: inline-block;
 }
 
-.submitBtn{
-    font-weight: 900;
+.plan-summary h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    margin: 20px 0 5px 0;
+    color: var(--accent-blue);
 }
 
-.description{
-    background-color: transparent;
-    border-radius: 0 50px 50px 0;
-    border: #793CE3 solid 3px;
-    padding: 0 40px;
-
-    p{
-        text-align: left;
-        padding: 0;
-    }
-
-    h4{
-        font-size: 35px;
-        padding: 20px 0;
-    }
-
-    strong{
-        font-size: 40px;
-        padding: 0;
-        font-weight: 900;
-    }
-
-    .feature{
-        margin: 40px 0;
-        padding: 30px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.306);
-        border-top: 1px solid rgba(255, 255, 255, 0.306);
-
-        li{
-            list-style-type: none;
-            padding: 10px 0;
-        }
-    }
+.tagline {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-bottom: 30px;
 }
 
-.details{
-    background-color: white;
-    color: #000;
-    padding: 50px;
-    border-radius: 50px 0 0 50px;
-
-    h5{
-        font-weight: 900;
-        padding: 20px 0;
-        font-size: 20px;
-    }
-}
-
-.priceCard{
-    h3{
-        .cancellation{
-            font-weight: 600;
-            font-size: 18px;
-            color: #348AB9;
-        }
-    }
-}
-
-.loginContainer{
-    background-image: none;
-    border: none;
-
-    button{
-        width: 100%;
-        border-radius: 12px;
-        background-image: linear-gradient(to right, #328EB8, #793CE3);
-    }
-
-    input{
-        padding: 0;
-    }
-}
-
-.tag{
-    width: 150px;
-    color: #965BFD;
-    margin-top: 30px;
-    margin-bottom: 0;
-    background-color: #4B0FB25E;
-    border: 1px solid #5E00FF;
-}
-
-.pricedetails{
+.plan-price {
     display: flex;
-
-    p{
-        font-size: 15px;
-        margin-top: 8px;
-        margin-left: 10px;
-
-        strong{
-            font-size: 15px;
-            font-weight: 600;
-            color: #348AB9;
-        }
-    }
+    align-items: center;
+    gap: 5px;
 }
 
-.feature{
-    i{
-        color: #793CE3;
-        padding-right: 30px;
-    }
+.price-symbol {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    margin-top: -15px;
 }
 
-.total{
+.price-amount {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 65px;
+}
+
+.price-meta {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.cancel-anytime {
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 30px 0;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.4;
+}
+
+.plan-features i {
+    color: var(--accent-purple);
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.plan-total {
     display: flex;
     justify-content: space-between;
-    font-family: "Manrope", sans-serif;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
 
-    h4{
-        font-size: 20px;
+.total-value strong {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+    .checkout-card {
+        grid-template-columns: 1fr;
+        background: #fff; /* Revert to white for mobile stack */
     }
-
-    h3{
-        font-weight: 500;
-        font-size: 20px;
-    }
-
-    strong{
-        background-image: linear-gradient(to right, #328EB8, #5665CD);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        font-family: "Archivo Black", sans-serif;
+    .plan-summary {
+        border-radius: 0;
+        border: none;
+        border-top: 2px solid #5E17EB;
     }
 }
 

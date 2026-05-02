@@ -8,27 +8,31 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
     </style>
     <link rel="stylesheet" href="editor.css">
-    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="stylesheet" href="../../../frontend/style.css">
     <title>Code Editor</title>
     <link rel="icon" type="image/png" href="../../../frontend/images/icon.png">
 
 </head>
 <body>
 
-    <header>
+<header class="main-header">
         <div class="container">
             <nav class="navbar">
-                <h2>
-                    <a href="/index.html"><img src="/frontend/images/Logo.png" alt=""></a>
-                </h2>
-                <ul>
-                    <li><a href="/frontend/Pages/Components Page/components.html">Components</a></li>
-                    <li><a href="/frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
-                    <li><a href="/frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
+                 <div class="nav-logo">
+                <a href="../../../index.html">
+                    <img src="../../../frontend/images/Logo.png" alt="CODICTS Logo">
+                </a>
+            </div>
+
+                <ul class="nav-links">
+                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                    <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                    <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
                 </ul>
+
                 <div class="navAuth">
-                    <a href="/frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn">Sign Up</button></a>
-                    <a href="/frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn">Log In</button></a>
+                    <a href="../Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
+                    <a href="../Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
                 </div>
             </nav>
         </div>
