@@ -379,3 +379,46 @@ textarea.code-textarea {
     margin-top: 15px;
     font-family: 'Manrope', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Full screen overlay - NO BLUR */
+.paywall-full-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Dim the background, but don't blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High enough to stay on top */
+}
+
+/* Ensure the popup box is solid */
+.paywall-lock {
+    background: #000000; /* Or your site's dark color */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Blur only for the code area when PRO tab is clicked */
+.locked-blur {
+    filter: blur(12px) !important;
+    pointer-events: none;
+}
