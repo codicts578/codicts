@@ -11,33 +11,58 @@
     <link rel="stylesheet" href="/frontend/Pages/Login and Signup Pages/forms.css">
     <link rel="stylesheet" href="payment.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../../../frontend/images/icon.png">
+    <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
     <title>CODICTS | SUBSCRIPTION</title>
 </head>
 <body>
-    <section class="heroPage">
 <header class="main-header">
-        <div class="container">
-            <nav class="navbar">
-                 <div class="nav-logo">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
                 <a href="../../../index.html">
-                    <img src="../../../frontend/images/Logo.png" alt="CODICTS Logo">
+                    <img src="../../../frontend/images/logo2.png" alt="CODICTS Logo">
                 </a>
             </div>
 
-                <ul class="nav-links">
-                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
-                    <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
-                    <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
-                </ul>
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                <li><a href="../Subscription Page/payment.html" class="nav-item active">Pricing</a></li>
+            </ul>
 
-                <div class="navAuth">
-                    <a href="../Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
-                    <a href="../Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
+            <!-- AUTH + HAMBURGER -->
+            <div class="navAuth">
+                <a href="../Login and Signup Pages/signup.html">
+                    <button id="signupBtn" class="auth-btn">Sign Up</button>
+                </a>
+
+                <a href="../Login and Signup Pages/login.html">
+                    <button id="loginBtn" class="auth-btn">Log In</button>
+                </a>
+
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- MOBILE SLIDE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../Components Page/components.html">Components</a>
+        <a href="../Starter Kits Page/starterKit.html">Starter Templates</a>
+        <a href="../Subscription Page/payment.html">Pricing</a>
+        <a href="../Login and Signup Pages/signup.html">Sign Up</a>
+        <a href="../Login and Signup Pages/login.html">Log In</a>
+    </div>
+</header>
 
 <section class="heroPg" data-aos="fade-down">
     <div class="heroText">
@@ -143,12 +168,34 @@
                 <hr class="divider" data-aos="fade-in" data-aos-delay="300">
 
                 <ul class="plan-features">
-                    <li data-aos="fade-up" data-aos-delay="350"><i class="fa-solid fa-circle-check"></i> Full UI component library</li>
-                    <li data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-circle-check"></i> Multi-framework support (HTML, CSS, React)</li>
-                    <li data-aos="fade-up" data-aos-delay="450"><i class="fa-solid fa-circle-check"></i> Download ready-to-use code files</li>
-                    <li data-aos="fade-up" data-aos-delay="500"><i class="fa-solid fa-circle-check"></i> Access to MVP starter kits</li>
-                    <li data-aos="fade-up" data-aos-delay="550"><i class="fa-solid fa-circle-check"></i> Weekly new component updates</li>
-                </ul>
+    <li data-aos="fade-up" data-aos-delay="350">
+        <i class="fa-solid fa-circle-check"></i> Full UI component library
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="400">
+        <i class="fa-solid fa-circle-check"></i> Full starter template library
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="450">
+        <i class="fa-solid fa-circle-check"></i> Multi-framework support (HTML, CSS, React)
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="500">
+        <i class="fa-solid fa-circle-check"></i> Download production-ready code files
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="550">
+        <i class="fa-solid fa-circle-check"></i> Download design previews as images
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="600">
+        <i class="fa-solid fa-circle-check"></i> Weekly new components & updates
+    </li>
+
+    <li data-aos="fade-up" data-aos-delay="650">
+        <i class="fa-solid fa-circle-check"></i> Early access to new features
+    </li>
+</ul>
             </div>
 
             <div class="plan-total" data-aos="fade-up" data-aos-delay="600">

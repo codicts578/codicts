@@ -9,30 +9,60 @@
     </style>
     <link rel="stylesheet" href="frontend/style.css">
     <title>CODICTS | HOME</title>
-    <link rel="icon" type="image/png" href="frontend/images/icon.png">
+    <link rel="icon" type="image/png" href="./frontend/images/icon1.png">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <section class="heroPage">
-        <header>
-            <div class="container">
-                <nav class="navbar">
-                    <h2>
-                        <a href="index.html"><img src="frontend/images/Logo.png" alt="Logo"></a>
-                    </h2>
-                    <ul>
-                        <li><a href="frontend/Pages/Components Page/components.html">Components</a></li>
-                        <li><a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
-                        <li><a href="frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
-                    </ul>
-                    <div class="navAuth">
-                        <a href="frontend/Pages/Login and Signup Pages/signup.html"><button id="signupBtn">Sign Up</button></a>
-                        <a href="frontend/Pages/Login and Signup Pages/login.html"><button id="loginBtn">Log In</button></a>
-                    </div>
-                </nav>
+<header class="main-header">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="frontend/images/logo2.png" alt="CODICTS Logo">
+                </a>
             </div>
-        </header>
+
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a href="frontend/Pages/Components Page/components.html" class="nav-item">Components</a></li>
+                <li><a href="frontend/Pages/Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                <li><a href="frontend/Pages/Subscription Page/payment.html" class="nav-item">Pricing</a></li>
+            </ul>
+
+            <!-- AUTH + HAMBURGER -->
+            <div class="navAuth">
+                <a href="frontend/Pages/Login and Signup Pages/signup.html">
+                    <button id="signupBtn" class="auth-btn">Sign Up</button>
+                </a>
+
+                <a href="frontend/Pages/Login and Signup Pages/login.html">
+                    <button id="loginBtn" class="auth-btn">Log In</button>
+                </a>
+
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- MOBILE SLIDE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="frontend/Pages/Components Page/components.html">Components</a>
+        <a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a>
+        <a href="frontend/Pages/Subscription Page/payment.html">Pricing</a>
+        <a href="frontend/Pages/Login and Signup Pages/signup.html">Sign Up</a>
+        <a href="frontend/Pages/Login and Signup Pages/login.html">Log In</a>
+    </div>
+</header>
 
 <!-- Hero Section -->
 <section class="heroPage">
@@ -71,7 +101,7 @@
                 <i data-lucide="eye"></i>
             </div>
             <h4>Preview</h4>
-            <p>Explore a curated collection of UI components and starter kits designed for modern applications.</p>
+            <p>Explore a curated collection of UI components designed for modern applications.</p>
         </div>
 
         <div class="separate" data-aos="fade-in" data-aos-delay="300">
@@ -134,7 +164,7 @@
     <div class="feature-icon">
         <i data-lucide="layout-template"></i>
     </div>
-    <h4>MVP Starter Templates</h4>
+    <h4>Starter Templates</h4>
     <p>Pre-built foundations to help you prototype and launch faster without starting from scratch.</p>
     <div class="glow-bg"></div>
 </div>
@@ -153,7 +183,7 @@
 <section class="explore">
     <div class="explore-header" data-aos="fade-up">
         <h2>Explore Modern <span class="blueGradient">UI Components</span></h2>
-        <p>Designed for contemporary dark interfaces and scalable digital products.</p>
+        <p>Build faster with ready-to-use components designed for real-world projects.</p>
     </div>
 
     <div class="exploreCards">
@@ -246,47 +276,53 @@
 <section class="pricing" id="pricing">
     <div class="pricing-header" data-aos="fade-up">
         <h2>Simple, Transparent <span class="blueGradient">Pricing</span></h2>
-        <p>Start free and upgrade when you need access to the full component library.</p>
+        <p>Start free and upgrade as your projects grow. No hidden fees.</p>
     </div>
 
     <div id="priceSection">
+
         <!-- Free Plan -->
         <div class="priceCard side-card" data-aos="fade-up" data-aos-delay="100">
             <div class="card-content">
                 <h4>Free</h4>
-                <p>Perfect for exploring Codicts and building small projects.</p>
+                <p>Perfect for beginners exploring UI development.</p>
                 <h3><strong>$0</strong><span>/month</span></h3>
                 <a href="frontend/Pages/Components Page/components.html">
                     <button class="priceBtn secondaryBtn">Get Started</button>
                 </a>
                 <ul class="tick-list">
                     <li>Limited UI components</li>
-                    <li>Split-screen view</li>
-                    <li>Copy HTML/CSS code</li>
-                    <li>Basic search tools</li>
+                    <li>Limited starter templates</li>
+                    <li>Live preview (design + code)</li>
+                    <li>Copy HTML & CSS code</li>
+                    <li>Customization options</li>
+                    <li>Search & category browsing</li>
+                    <li>Save favorite components</li>
                 </ul>
             </div>
         </div>
 
         <!-- Pro Plan -->
         <div class="popularPriceCard" data-aos="fade-up" data-aos-delay="200">
-            <div class="popular-badge">POPULAR</div>
+            <div class="popular-badge">MOST POPULAR</div>
             <div class="proCard">
                 <div class="card-content">
                     <h4>Pro</h4>
-                    <p>Everything you need to build and launch real projects faster.</p>
+                    <p>Everything you need to build real projects faster.</p>
                     <h3><strong>$9</strong><span>/month</span></h3>
                     <a href="frontend/Pages/Subscription Page/payment.html">
                         <button class="priceBtn primaryBtn">
-                            <span>Subscribe Pro</span>
+                            <span>Subscribe to Pro</span>
                         </button>
                     </a>
                     <ul class="tick-list highlight-ticks">
-                        <li>Full component library</li>
-                        <li>React & Framework support</li>
-                        <li>Download source files</li>
-                        <li>Weekly new components</li>
-                        <li>Advanced Starter Kits</li>
+                        <li>Full UI component library</li>
+                        <li>Full starter template library</li>
+                        <li>Multi-framework support</li>
+                        <li>Download production-ready code files</li>
+                        <li>Download design previews as images</li>
+                        <li>Weekly new components & updates</li>
+                        <li>Priority access to new features</li>
                     </ul>
                 </div>
             </div>
@@ -295,20 +331,27 @@
         <!-- Team Plan -->
         <div class="priceCard side-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-content">
-                <h4>Team Plan</h4>
-                <p>Collaborative tools for growing teams and agencies.</p>
+                <h4>Team</h4>
+                <p>For teams, freelancers, and growing projects.</p>
                 <h3><strong>$12</strong><span>/month</span></h3>
                 <a href="frontend/Pages/Subscription Page/payment.html">
                     <button class="priceBtn secondaryBtn">Get Started</button>
                 </a>
                 <ul class="tick-list">
                     <li>Everything in Pro</li>
-                    <li>Team collaboration</li>
+                    <li>Team workspace (shared projects)</li>
+                    <li>Shared components & favorites</li>
                     <li>Unlimited downloads</li>
-                    <li>Full design kits</li>
+                    <li>Project organization tools</li>
+                    <li>Priority support</li>
+                    <li>Early access to new features</li>
                 </ul>
+
+                <!-- Future note -->
+                <p class="note-text">*Some collaboration features are part of future updates.</p>
             </div>
         </div>
+
     </div>
 </section>
 

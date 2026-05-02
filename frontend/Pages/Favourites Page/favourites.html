@@ -6,32 +6,58 @@
     <link rel="stylesheet" href="/frontend/Pages/Components Page/components.css">
     <link rel="stylesheet" href="fav.css">
     <script src="data.js"></script>
-    <link rel="icon" type="image/png" href="../../../frontend/images/icon.png">
+    <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
 </head>
 <body>
     <section class="heroPage">
 <header class="main-header">
-        <div class="container">
-            <nav class="navbar">
-                 <div class="nav-logo">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
                 <a href="../../../index.html">
-                    <img src="../../../frontend/images/Logo.png" alt="CODICTS Logo">
+                    <img src="../../../frontend/images/logo2.png" alt="CODICTS Logo">
                 </a>
             </div>
 
-                <ul class="nav-links">
-                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
-                    <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
-                    <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
-                </ul>
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a href="../Components Page/components.html">Components</a></li>
+                <li><a href="../Starter Kits Page/starterKit.html">Starter Templates</a></li>
+                <li><a href="../Subscription Page/payment.html">Pricing</a></li>
+            </ul>
 
-                <div class="navAuth">
-                    <a href="../Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
-                    <a href="../Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
-                </div>
-            </nav>
-        </div>
-    </header>
+            <!-- AUTH BUTTONS -->
+            <div class="navAuth">
+                <a href="../Login and Signup Pages/signup.html">
+                    <button id="signupBtn">Sign Up</button>
+                </a>
+
+                <a href="../Login and Signup Pages/login.html">
+                    <button id="loginBtn">Log In</button>
+                </a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../Components Page/components.html">Components</a>
+        <a href="../Starter Kits Page/starterKit.html">Starter Templates</a>
+        <a href="../Subscription Page/payment.html">Pricing</a>
+        <a href="../Login and Signup Pages/signup.html">Sign Up</a>
+        <a href="../Login and Signup Pages/login.html">Log In</a>
+    </div>
+</header>
 
     </section>    
     
@@ -76,7 +102,7 @@
     </footer>
 
     <script src="favourites.js"></script>
-    <script src="/frontend/script.js"></script>
+    <script src="../../../frontend/script.js"></script>
     
 </body>
 </html>

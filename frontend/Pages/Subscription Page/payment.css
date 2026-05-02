@@ -16,23 +16,13 @@ body{
     font-family: "Manrope", sans-serif;
 }
 
-button{
-    cursor: pointer;
-}
-
-.container{
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
 /* --- Navigation Bar --- */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(11, 10, 15, 0.8); /* Slightly more opaque for visibility */
+    background: rgba(11, 10, 15, 0.8); 
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(121, 60, 227, 0.15);
     padding: 5px 0;
@@ -64,11 +54,12 @@ header {
 }
 
 .nav-logo a img {
-    height: 50px; /* Fixed height to keep it consistent */
-    width: auto;  /* Auto width maintains aspect ratio */
-    object-fit: contain; /* Ensures the image isn't stretched or cropped */
+    height: 100px; 
+    width: auto;  
+    object-fit: contain; 
     transition: transform 0.3s ease;
     display: block;
+    transform: translateY(3px);
 }
 
 .nav-logo a img:hover {
@@ -76,14 +67,12 @@ header {
 }
 
 /* --- Auth Buttons Gap --- */
-/* --- Auth Buttons Container --- */
 .navAuth {
     display: flex;
     align-items: center;
-    gap: 20px; /* Adjust this value (e.g., 20px, 25px) to get the perfect distance */
+    gap: 20px; 
 }
 
-/* Your existing button styles remain the same */
 #signupBtn, #loginBtn {
     padding: 10px 24px;
     border-radius: 8px;
@@ -103,7 +92,7 @@ header {
 
 #loginBtn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
 
@@ -158,6 +147,89 @@ header {
     width: 100%;
 }
 
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    z-index: 2000;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(11, 10, 15, 0.95);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    padding: 120px 30px;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 1500;
+    border-left: 1px solid rgba(121, 60, 227, 0.2);
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.mobile-menu a:hover {
+    opacity: 1;
+    color: #E55EEE;
+}
+
+/* ACTIVE STATE */
+.mobile-menu.active {
+    right: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    #signupBtn,
+    #loginBtn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
 .user-menu-container {
     position: relative;
     display: inline-block;
@@ -183,7 +255,7 @@ header {
 
 /* The hidden dropdown box */
 .user-dropdown-content {
-    display: none; /* Hidden by default */
+    display: none; 
     position: absolute;
     right: 0;
     top: 45px;
@@ -247,7 +319,7 @@ header {
     min-width: 180px;
     box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
     border-radius: 12px;
-    z-index: 9999; /* Higher than hero sections/images */
+    z-index: 9999;
     border: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -286,14 +358,14 @@ header {
 .user-dropdown-content {
     display: none; 
     position: absolute;
-    right: 0; /* Align to the right of the button */
-    top: 100%; /* Sit directly below the button */
+    right: 0; 
+    top: 100%; 
     margin-top: 10px;
     background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
     border-radius: 8px;
-    z-index: 10000; /* Extremely high to beat the Hero page */
+    z-index: 10000; 
     border: 1px solid #eee;
     overflow: hidden;
 }
@@ -475,11 +547,9 @@ header {
     flex-direction: column;
     justify-content: space-between;
     
-    /* Margin is now 0 so it touches the card edge */
     margin: 0; 
-    /* Purple border on the top, right, and bottom only (or all around) */
     border: 2px solid #5E17EB;
-    border-left: none; /* Optional: hides the purple line where it meets the white form */
+    border-left: none; 
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
 }
@@ -579,16 +649,148 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
-/* --- Responsive --- */
-@media (max-width: 850px) {
+/* Responsive Design*/
+/* Tablet */
+@media (max-width: 900px) {
+        .heroText h1 {
+        font-size: 40px;
+        padding: 0 15px;
+    }
+
+        .heroPg {
+        margin-top: 110px;
+    }
+
+    .heroPg {
+        margin-top: 110px;
+    }
+
     .checkout-card {
         grid-template-columns: 1fr;
-        background: #fff; /* Revert to white for mobile stack */
+        border-radius: 25px;
     }
+
+    .payment-form {
+        padding: 35px;
+    }
+
     .plan-summary {
-        border-radius: 0;
-        border: none;
-        border-top: 2px solid #5E17EB;
+        border-left: 2px solid #5E17EB;
+        border-radius: 0 0 25px 25px;
+        padding: 40px;
+    }
+
+    .heroText h1 {
+        font-size: 38px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+        .heroText h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        padding: 0 15px;
+    }
+
+    .heroText p {
+        font-size: 14px;
+        padding: 0 20px;
+        opacity: 0.8;
+    }
+
+    .heroPg {
+        margin-top: 90px;
+        margin-bottom: 30px;
+    }
+
+    .heroText h1 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .checkout-container {
+        padding: 20px 10px;
+    }
+
+    .checkout-card {
+        border-radius: 20px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    .payment-form {
+        padding: 25px;
+    }
+
+    .form-part h3 {
+        font-size: 12px;
+    }
+
+    .input-box {
+        padding: 8px 12px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pay-btn {
+        padding: 15px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .plan-summary {
+        padding: 30px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .plan-summary h2 {
+        font-size: 24px;
+    }
+
+    .price-amount {
+        font-size: 48px;
+    }
+
+    .price-symbol {
+        font-size: 30px;
+    }
+
+    .plan-features li {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .plan-total strong {
+        font-size: 26px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+
+    .heroText h1 {
+        font-size: 26px;
+    }
+
+    .heroText p {
+        font-size: 13px;
+    }
+
+
+    .plan-summary {
+        padding: 25px;
+    }
+
+    .payment-form {
+        padding: 20px;
+    }
+
+    .pay-btn {
+        font-size: 13px;
     }
 }
 
@@ -597,24 +799,20 @@ footer {
     color: white;
     padding: 80px 0 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Force left alignment for everything inside the footer */
     text-align: left; 
 }
 
 .footerContent {
     display: grid;
-    /* 2fr 1fr 1fr makes the first column wider and others snug to the left */
     grid-template-columns: 2fr 1fr 1fr; 
     gap: 60px;
     width: 85%;
     margin: 0 auto;
     padding-bottom: 50px;
-    /* Ensures the grid cells themselves start from the left */
     justify-content: start; 
     align-items: start;
 }
 
-/* Force left alignment on all text blocks to override any global 'center' styles */
 .intro, .products, .contact {
     text-align: left;
 }
@@ -668,18 +866,18 @@ footer {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease;
-    display: inline-block; /* Helps with alignment */
+    display: inline-block; 
 }
 
 .footerContent ul li a:hover {
     color: white;
-    transform: translateX(8px); /* Cleaner than padding-left */
+    transform: translateX(8px);
 }
 
 /* Social Links - Left Aligned Flexbox */
 .social-links {
     display: flex;
-    justify-content: flex-start; /* Forces icons to the left */
+    justify-content: flex-start; 
     gap: 25px;
     margin-top: 20px;
 }

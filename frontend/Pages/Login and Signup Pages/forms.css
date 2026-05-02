@@ -16,7 +16,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(11, 10, 15, 0.8); /* Slightly more opaque for visibility */
+    background: rgba(11, 10, 15, 0.8); 
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(121, 60, 227, 0.15);
     padding: 5px 0;
@@ -48,11 +48,12 @@ header {
 }
 
 .nav-logo a img {
-    height: 50px; /* Fixed height to keep it consistent */
-    width: auto;  /* Auto width maintains aspect ratio */
-    object-fit: contain; /* Ensures the image isn't stretched or cropped */
+    height: 100px; 
+    width: auto;  
+    object-fit: contain; 
     transition: transform 0.3s ease;
     display: block;
+    transform: translateY(3px);
 }
 
 .nav-logo a img:hover {
@@ -60,23 +61,20 @@ header {
 }
 
 /* --- Auth Buttons Gap --- */
-.nav-auth {
+.navAuth {
     display: flex;
-    gap: 25px; /* Increased from 15px to 25px for better breathing room */
     align-items: center;
-    position: relative;
-    z-index: 1001; /* Keeps them above centering layers */
+    gap: 20px; 
 }
 
-/* Base button styles */
 #signupBtn, #loginBtn {
-    padding: 10px 24px; /* Slightly wider padding for a premium feel */
+    padding: 10px 24px;
     border-radius: 8px;
     font-weight: 700;
     font-size: 13px;
     cursor: pointer;
     transition: all 0.3s ease;
-    white-space: nowrap; /* Prevents text from breaking into two lines */
+    white-space: nowrap;
 }
 
 #signupBtn {
@@ -88,7 +86,7 @@ header {
 
 #loginBtn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
 
@@ -141,6 +139,98 @@ header {
 
 .nav-links li a:hover::after {
     width: 100%;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    z-index: 2000;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: rgba(11, 10, 15, 0.97);
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    padding: 120px 30px;
+    gap: 25px;
+
+    z-index: 9999; 
+
+    transform: translateX(110%);
+    transition: transform 0.35s ease-in-out;
+
+    border-left: 1px solid rgba(121, 60, 227, 0.25);
+}
+
+/* ACTIVE STATE */
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* links */
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.mobile-menu a:hover {
+    opacity: 1;
+    color: #E55EEE;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    #signupBtn,
+    #loginBtn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
 /* Container Background & Spacing */
@@ -317,24 +407,19 @@ footer {
     color: white;
     padding: 80px 0 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Force left alignment for everything inside the footer */
     text-align: left; 
 }
 
 .footerContent {
     display: grid;
-    /* 2fr 1fr 1fr makes the first column wider and others snug to the left */
     grid-template-columns: 2fr 1fr 1fr; 
     gap: 60px;
     width: 85%;
     margin: 0 auto;
     padding-bottom: 50px;
-    /* Ensures the grid cells themselves start from the left */
     justify-content: start; 
     align-items: start;
 }
-
-/* Force left alignment on all text blocks to override any global 'center' styles */
 .intro, .products, .contact {
     text-align: left;
 }
@@ -377,7 +462,7 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* Explicitly left */
+    text-align: left; 
 }
 
 .footerContent ul li {
@@ -388,12 +473,12 @@ footer {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease;
-    display: inline-block; /* Helps with alignment */
+    display: inline-block; 
 }
 
 .footerContent ul li a:hover {
     color: white;
-    transform: translateX(8px); /* Cleaner than padding-left */
+    transform: translateX(8px); 
 }
 
 /* Social Links - Left Aligned Flexbox */

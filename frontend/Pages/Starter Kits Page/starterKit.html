@@ -13,32 +13,58 @@
     <link rel="stylesheet" href="/frontend/style.css">
     <link rel="stylesheet" href="starterKit.css">
     <title>CODICTS | STARTER KITS</title>
-    <link rel="icon" type="image/png" href="../../../frontend/images/icon.png">
+    <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
 </head>
 <body>
 
 <header class="main-header">
-        <div class="container">
-            <nav class="navbar">
-                 <div class="nav-logo">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
                 <a href="../../../index.html">
-                    <img src="../../../frontend/images/Logo.png" alt="CODICTS Logo">
+                    <img src="../../../frontend/images/logo2.png" alt="CODICTS Logo">
                 </a>
             </div>
 
-                <ul class="nav-links">
-                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
-                    <li><a href="starterKit.html" class="nav-item active">Starter Templates</a></li>
-                    <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
-                </ul>
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                <li><a href="../Starter Kits Page/starterKit.html" class="nav-item active">Starter Templates</a></li>
+                <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
+            </ul>
 
-                <div class="navAuth">
-                    <a href="../Login and Signup Pages/signup.html"><button id="signupBtn" class="auth-btn">Sign Up</button></a>
-                    <a href="../Login and Signup Pages/login.html"><button id="loginBtn" class="auth-btn">Log In</button></a>
+            <!-- AUTH + HAMBURGER -->
+            <div class="navAuth">
+                <a href="../Login and Signup Pages/signup.html">
+                    <button id="signupBtn" class="auth-btn">Sign Up</button>
+                </a>
+
+                <a href="../Login and Signup Pages/login.html">
+                    <button id="loginBtn" class="auth-btn">Log In</button>
+                </a>
+
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- MOBILE SLIDE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../Components Page/components.html">Components</a>
+        <a href="../Starter Kits Page/starterKit.html">Starter Templates</a>
+        <a href="../Subscription Page/payment.html">Pricing</a>
+        <a href="../Login and Signup Pages/signup.html">Sign Up</a>
+        <a href="../Login and Signup Pages/login.html">Log In</a>
+    </div>
+</header>
 
     <section class="hero-section">
         <div class="hero-container" data-aos="fade-up" data-aos-duration="1000">

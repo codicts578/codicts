@@ -36,11 +36,12 @@ header {
 }
 
 .nav-logo a img {
-    height: 50px; /* Fixed height to keep it consistent */
-    width: auto;  /* Auto width maintains aspect ratio */
-    object-fit: contain; /* Ensures the image isn't stretched or cropped */
+    height: 100px; 
+    width: auto; 
+    object-fit: contain;
     transition: transform 0.3s ease;
     display: block;
+    transform: translateY(3px);
 }
 
 .nav-logo a img:hover {
@@ -48,14 +49,21 @@ header {
 }
 
 /* --- Auth Buttons Gap --- */
-/* --- Auth Buttons Container --- */
 .navAuth {
     display: flex;
     align-items: center;
-    gap: 20px; /* Adjust this value (e.g., 20px, 25px) to get the perfect distance */
+    gap: 20px;
 }
 
-/* Your existing button styles remain the same */
+.nav-links li a.active {
+    opacity: 1;
+}
+
+/* show underline for active link */
+.nav-links li a.active::after {
+    width: 100%;
+}
+
 #signupBtn, #loginBtn {
     padding: 10px 24px;
     border-radius: 8px;
@@ -75,7 +83,7 @@ header {
 
 #loginBtn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border */
+    border: 1px solid rgba(255, 255, 255, 0.3); 
     color: white;
 }
 
@@ -431,24 +439,21 @@ footer {
     color: white;
     padding: 80px 0 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Force left alignment for everything inside the footer */
+
     text-align: left; 
 }
 
 .footerContent {
     display: grid;
-    /* 2fr 1fr 1fr makes the first column wider and others snug to the left */
     grid-template-columns: 2fr 1fr 1fr; 
     gap: 60px;
     width: 85%;
     margin: 0 auto;
     padding-bottom: 50px;
-    /* Ensures the grid cells themselves start from the left */
     justify-content: start; 
     align-items: start;
 }
 
-/* Force left alignment on all text blocks to override any global 'center' styles */
 .intro, .products, .contact {
     text-align: left;
 }
@@ -491,7 +496,7 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* Explicitly left */
+    text-align: left; 
 }
 
 .footerContent ul li {
@@ -502,18 +507,18 @@ footer {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease;
-    display: inline-block; /* Helps with alignment */
+    display: inline-block;
 }
 
 .footerContent ul li a:hover {
     color: white;
-    transform: translateX(8px); /* Cleaner than padding-left */
+    transform: translateX(8px);
 }
 
 /* Social Links - Left Aligned Flexbox */
 .social-links {
     display: flex;
-    justify-content: flex-start; /* Forces icons to the left */
+    justify-content: flex-start;
     gap: 25px;
     margin-top: 20px;
 }
