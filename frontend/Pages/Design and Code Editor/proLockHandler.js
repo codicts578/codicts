@@ -1,9 +1,8 @@
 (function() {
-    // Cache the auth status to prevent 'await' delays during the click
     let isProUser = false;
     let authChecked = false;
 
-    // Run this immediately to check status
+    // Run auth check
     async function initAuth() {
         try {
             const response = await fetch('/check-auth?t=' + Date.now());
@@ -16,29 +15,15 @@
     }
     initAuth();
 
-    // THE BOUNCER: Standard click listener on Capture Phase
-    window.addEventListener('click', function(e) {
-        const target = e.target.closest('#exportCodeBtn, #exportImageBtn, .tab-btn.pro-link');
-        
-        if (!target) return;
+    // The logic to remove the lock/blur
+    function removeTabBlur() {
+        const codeArea = document.querySelector('.code-editor-area');
+        const lockOverlay = document.querySelector('.paywall-lock');
+        if (codeArea) codeArea.classList.remove('locked-blur');
+        if (lockOverlay) lockOverlay.remove();
+    }
 
-        // If we haven't confirmed they are PRO, STOP everything instantly
-        if (!isProUser) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation(); // Kills your other script's listener
-
-            // If it was an export button, show the popup
-            if (target.id === 'exportCodeBtn' || target.id === 'exportImageBtn') {
-                showExportPopup();
-            } 
-            // If it was a PRO tab, apply the blur to the editor ONLY
-            else if (target.classList.contains('pro-link')) {
-                applyTabBlur();
-            }
-        }
-    }, true); // 'true' is critical to catch the event before your other script
-
+    // The logic to apply the lock/blur
     function applyTabBlur() {
         const codeArea = document.querySelector('.code-editor-area');
         const container = document.querySelector('.code-editor-container');
@@ -65,18 +50,56 @@
         container.appendChild(lockOverlay);
     }
 
+    // Capture Phase Listener
+    window.addEventListener('click', function(e) {
+        const target = e.target.closest('.tab-btn, #exportCodeBtn, #exportImageBtn, #copyFinalCodeBtn');
+        if (!target) return;
+
+        const activeTab = document.querySelector('.tab-btn.active');
+    const isProTabActive = activeTab && activeTab.classList.contains('pro-link');
+
+        // 1. If it's an Export Button, we block it completely
+        if (target.id === 'exportCodeBtn' || target.id === 'exportImageBtn' || target.id === 'copyFinalCodeBtn') {
+            if (!isProUser && isProTabActive) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                
+                if (target.id === 'copyFinalCodeBtn') {
+                // Show a specific alert for copying
+                alert("Please upgrade to PRO to copy this code.");
+            } else {
+                showExportPopup();
+            }
+            return;
+            }
+            return;
+        }
+
+        // 2. If it's a Tab Button
+        if (target.classList.contains('tab-btn')) {
+            // ALWAYS remove the blur first so the user can see the transition
+            removeTabBlur();
+
+            // If it's a PRO tab and they aren't pro, wait a tiny bit and apply blur
+            // We DON'T stop propagation so the original script can highlight the tab
+            if (target.classList.contains('pro-link') && !isProUser) {
+                // setTimeout ensures the "active" class logic in logincomponent.js 
+                // finishes before we overlay our lock
+                setTimeout(applyTabBlur, 10);
+            }
+        }
+    }, true); 
+
     function showExportPopup() {
         if (document.querySelector('.paywall-full-overlay')) return;
-
         const overlay = document.createElement('div');
         overlay.className = 'paywall-full-overlay';
-
-        // Note: backdrop-filter removed for no blur
         overlay.innerHTML = `
             <div class="paywall-lock" style="position: relative; width: 320px; height: auto; border-radius: 12px; top: 0; box-shadow: 0 0 50px rgba(0,0,0,0.5);">
                 <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Archivo Black', sans-serif;">Export is PRO</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 20px;">Downloading source files is a PRO feature.</p>
+                <h2 style="font-family: 'Archivo Black', sans-serif;">PRO Feature</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 20px;">Login and Upgrade to PRO to unlock this feature</p>
                 <div style="display: flex; gap: 10px;">
                     <a href="/frontend/Pages/Subscription Page/payment.html"><button class="paywall-btn">Upgrade</button></a>
                     <button class="paywall-btn close-btn" style="background: #334155;">Close</button>
@@ -87,3 +110,14 @@
         overlay.querySelector('.close-btn').onclick = () => overlay.remove();
     }
 })();
+
+
+window.addEventListener('keydown', function(e) {
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab && activeTab.classList.contains('pro-link') && !isProUser) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+            e.preventDefault();
+            alert("Copying is disabled for PRO content.");
+        }
+    }
+});
