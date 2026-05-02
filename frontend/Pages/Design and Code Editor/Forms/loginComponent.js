@@ -311,65 +311,8 @@ root.mainloop()`;
     loginBtnEl.addEventListener('click', (e) => { e.preventDefault(); alert('🔐 Login preview | Authentication demo'); });
     syncFromCodeBtn.addEventListener('click', syncDesignFromCode);
     copyFinalCodeBtn.addEventListener('click', async () => { await navigator.clipboard.writeText(codeEditor.value); copyFinalCodeBtn.innerText='✅ Copied!'; setTimeout(()=>copyFinalCodeBtn.innerText='Copy Code',1500); });
-    // --- UPDATED EXPORT BUTTONS WITH PAYWALL ---
-
-// 1. Export Code File Button
-exportCodeBtn.addEventListener('click', async (e) => {
-    e.preventDefault(); // Stop immediate action
-    
-    try {
-        const response = await fetch('/check-auth');
-        const data = await response.json();
-
-        if (data.loggedIn && data.isPaid) {
-            // PRO USER: Run your existing download logic
-            const code = codeEditor.value;
-            const blob = new Blob([code], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `codicts-form-${currentPlatform}.txt`;
-            a.click();
-            URL.revokeObjectURL(url);
-            updateSyncStatus('exported .txt');
-        } else {
-            // NOT PRO: Show paywall
-            showStarterPaywall(data.loggedIn);
-        }
-    } catch (err) {
-        console.error("Auth check failed", err);
-    }
-});
-
-// 2. Export PNG Button
-exportImageBtn.addEventListener('click', async (e) => {
-    e.preventDefault(); // Stop immediate action
-
-    try {
-        const response = await fetch('/check-auth');
-        const data = await response.json();
-
-        if (data.loggedIn && data.isPaid) {
-            // PRO USER: Run your existing PNG logic
-            if (typeof html2canvas !== 'undefined') {
-                html2canvas(document.getElementById('liveFormRoot')).then(canvas => {
-                    const link = document.createElement('a');
-                    link.download = 'codicts-design.png';
-                    link.href = canvas.toDataURL();
-                    link.click();
-                });
-            } else {
-                alert("html2canvas library not loaded.");
-            }
-        } else {
-            // NOT PRO: Show paywall
-            showStarterPaywall(data.loggedIn);
-        }
-    } catch (err) {
-        console.error("Auth check failed", err);
-    }
-});
-
+    exportCodeBtn.addEventListener('click', exportCodeFile);
+    exportImageBtn.addEventListener('click', exportFormAsPNG);
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
