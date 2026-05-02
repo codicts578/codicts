@@ -231,6 +231,7 @@ body {
     width: 90%;
     height: 100vh;
     margin: 0 auto;
+    margin-top: 120px;
     gap: 20px;
     overflow: hidden;
 }
