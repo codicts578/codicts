@@ -20,7 +20,6 @@
     const syncFromCodeBtn = document.getElementById('syncFromCodeBtn');
     const copyFinalCodeBtn = document.getElementById('copyFinalCodeBtn');
     const exportCodeBtn = document.getElementById('exportCodeBtn');
-    const exportImageBtn = document.getElementById('exportImageBtn');
     const syncStatusSpan = document.getElementById('syncStatus');
     
     let currentPlatform = 'web';
@@ -345,40 +344,6 @@ if self.command:
         updateSyncStatus('code exported!');
     }
     
-    async function exportDesignAsImage() {
-        const buttonElement = liveButton;
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const rect = buttonElement.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-        
-        // Draw background
-        ctx.fillStyle = '#5CA4EA';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        // Draw button appearance
-        ctx.fillStyle = getComputedStyle(buttonElement).backgroundColor;
-        ctx.strokeStyle = btnBorderColor.value;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(5, 5, canvas.width - 10, canvas.height - 10);
-        
-        ctx.fillStyle = btnTextColor.value;
-        ctx.font = '18px Lato';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(btnLabel.value, canvas.width/2, canvas.height/2);
-        
-        canvas.toBlob(blob => {
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `button_design_${Date.now()}.png`;
-            link.click();
-            URL.revokeObjectURL(link.href);
-            updateSyncStatus('PNG exported');
-        }, 'image/png');
-    }
-    
     // Event listeners
     btnBorderColor.addEventListener('input', applyDesign);
     btnHoverBg.addEventListener('input', applyDesign);
@@ -397,7 +362,6 @@ if self.command:
         setTimeout(() => copyFinalCodeBtn.innerText = orig, 1500);
     });
     exportCodeBtn.addEventListener('click', exportCodeFile);
-    exportImageBtn.addEventListener('click', exportDesignAsImage);
     
     // Tab switching
     document.querySelectorAll('.tab-btn').forEach(btn => {
