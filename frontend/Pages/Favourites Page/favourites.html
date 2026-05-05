@@ -2,10 +2,14 @@
 <html>
 <head>
     <title>CODICTS | MY SAVED</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
+    </style>
     <link rel="stylesheet" href="/frontend/style.css">
     <link rel="stylesheet" href="/frontend/Pages/Components Page/components.css">
     <link rel="stylesheet" href="fav.css">
-    <script src="data.js"></script>
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
 </head>
 <body>
@@ -23,27 +27,27 @@
 
             <!-- DESKTOP NAV -->
             <ul class="nav-links">
-                <li><a href="../Components Page/components.html">Components</a></li>
-                <li><a href="../Starter Kits Page/starterKit.html">Starter Templates</a></li>
-                <li><a href="../Subscription Page/payment.html">Pricing</a></li>
+                <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
             </ul>
 
-            <!-- AUTH BUTTONS -->
+            <!-- AUTH + HAMBURGER -->
             <div class="navAuth">
                 <a href="../Login and Signup Pages/signup.html">
-                    <button id="signupBtn">Sign Up</button>
+                    <button id="signupBtn" class="auth-btn">Sign Up</button>
                 </a>
 
                 <a href="../Login and Signup Pages/login.html">
-                    <button id="loginBtn">Log In</button>
+                    <button id="loginBtn" class="auth-btn">Log In</button>
                 </a>
-            </div>
 
-            <!-- HAMBURGER -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
 
         </nav>
@@ -61,48 +65,69 @@
 
     </section>    
     
-    <main id="componentsCollection">
+    <!-- In favs.html -->
+    <section id="componentsCollection">
         <div class="componentContainer">
             <h2>My Saved Components</h2>
-            <div class="UIcollection"></div> 
+            
+            <!-- This grid is where the cards will appear -->
+            <div class="UIcollection">
+                <!-- JavaScript will inject cards here -->
+            </div>
         </div>
-    </main>
+    </section>
+
 
     <footer>
-        <div class="footerContent">
-            <div class="intro">
-                <h3>CODICTS</h3>
-                <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
-                <p class="slogan">Design smarter. Code faster.</p>
-            </div>
+    <div class="footerContent">
+        <div class="intro">
+            <h3>CODICTS</h3>
+            <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
+            <p class="slogan">Design smarter. Code faster.</p>
+        </div>
 
-            <div class="products">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="../../../frontend/Pages/Components Page/components.html">Components</a></li>
-                    <li><a href="../../../frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
-                    <li><a href="../../../frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
-                </ul>
-            </div>
+        <div class="products">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="frontend/Pages/Components Page/components.html">Components</a></li>
+                <li><a href="frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
+                <li><a href="frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
+            </ul>
+        </div>
 
-            <div class="contact">
-                <h3>Connect</h3>
-                <p>Follow Codicts for product updates, new components and UI inspiration</p>
-
-                <a href="https://www.instagram.com/_codicts_?igsh=MXdmb3A1eTA1dTB1aw=="><i class="fa-brands fa-instagram"></i></a>
+        <div class="contact">
+            <h3>Connect</h3>
+            <p>Follow Codicts for product updates, new components and UI inspiration</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_codicts_"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61575483250009"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@_codicts_?_r=1&_t=ZS-9542Ry70N8P"><i class="fa-brands fa-tiktok"></i></a>
-                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.tiktok.com/@_codicts_"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
-        </div>
-    </footer>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+    </div>
+</footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,      
+        easing: 'ease-out-quad', 
+        once: true,         
+        offset: 120,
+    });
+    </script>
+
+    <script>
+    lucide.createIcons();
+    </script>
+    <script src="data.js"></script>
+    <script src="/frontend/Pages/Components Page/components.js"></script>
     <script src="favourites.js"></script>
-    <script src="../../../frontend/script.js"></script>
+    <script src="/frontend/script.js"></script>
     
 </body>
 </html>
