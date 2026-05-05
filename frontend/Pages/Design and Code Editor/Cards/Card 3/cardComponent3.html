@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script> <!-- script link for icons-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+    <title>CODICTS | CODE EDITOR</title>
+    <!-- Fonts & Icons -->
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
+    </style>
+    <link rel="icon" type="image/png" href="/frontend/images/icon1.png">
+    <!-- Scripts & Stylesheets -->
     <link rel="stylesheet" href="/frontend/Pages/Design and Code Editor/editorPages.css">
     <link rel="stylesheet" href="cardComponent3.css">
     <link rel="stylesheet" href="/frontend/style.css">
-    <title>Code Editor</title>
-    <link rel="icon" type="image/png" href="/frontend/images/icon1.png">
 </head>
 <body>
     <header class="main-header">
@@ -105,7 +110,8 @@
             <div class="code-header">
                 <h3>Code View</h3>
                 <div class="action-group ">
-                    <button class="code-action-btn" id="syncFromCodeBtn">Sync Code and Design</button>
+                    <button class="code-action-btn syncs" id="syncFromCodeBtn">Sync Code</button>
+                    <button class="code-action-btn" id="exportCodeBtn"><i class="fa-solid fa-download"></i> Export Code File</button>
                     <button class="code-action-btn primary" id="copyFinalCodeBtn"><i class="fa-regular fa-clipboard"></i> Copy Code</button>
                 </div>
             </div>
@@ -124,11 +130,6 @@
             </div>
         </div>
     </div>
-
-    <section class="exports ">
-        <button class="code-action-btn" id="exportCodeBtn"><i class="fa-solid fa-download"></i> Export Code File</button>
-        <button class="code-action-btn" id="exportImageBtn"><i class="fa-solid fa-download"></i> Download PNG</button>
-    </section>
 
     <footer>
     <div class="footerContent">
