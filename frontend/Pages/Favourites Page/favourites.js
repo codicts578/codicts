@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const favoriteContainer = document.querySelector('.UIcollection');
+    const collection = document.querySelector('.UIcollection');
+    if (!collection) return;
 
     try {
-        const res = await fetch('/my-likes');
-        const data = await res.json();
-        const likedNames = data.likes;
-
-        if (!likedNames || likedNames.length === 0) {
-            favoriteContainer.innerHTML = "<h3>No saved components.</h3>";
+        // 1. Fetch User Likes
+        const response = await fetch('/my-likes');
+        const data = await response.json();
+        
+        if (!data.likes || data.likes.length === 0) {
+            collection.innerHTML = "<h3 style='grid-column: 1/-1; text-align: center; color: white;'>No saved components yet.</h3>";
             return;
         }
 
-        // Filter master list (UI_COMPONENTS from your data.js)
-        const userFavorites = UI_COMPONENTS.filter(item => likedNames.includes(item.name));
+        // 2. Filter data.js based on what's in the Database
+        const savedItems = UI_COMPONENTS.filter(comp => data.likes.includes(comp.name));
 
-        // Render cards with 'true' passed to generateCardHTML so hearts start as FILLED
-        favoriteContainer.innerHTML = userFavorites
-            .map(item => generateCardHTML(item, true)) 
-            .join('');
+        // 3. Render using your data.js function
+        // We pass 'true' because we know these are all liked
+        collection.innerHTML = savedItems.map(item => generateCardHTML(item, true)).join('');
 
     } catch (err) {
-        console.error("Error loading favorites:", err);
+        console.error("Error loading saved items:", err);
     }
 });
