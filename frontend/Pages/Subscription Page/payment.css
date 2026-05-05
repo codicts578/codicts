@@ -65,6 +65,53 @@ header {
 .nav-logo a img:hover {
     transform: scale(1.05);
 }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    opacity: 1;
+}
+
+/* underline */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E55EEE, #006FCF);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
 
 /* --- Auth Buttons Gap --- */
 .navAuth {
