@@ -1,74 +1,74 @@
-   // This runs as soon as the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        // 1. Check if User is Logged In
-        fetch('/check-auth')
-            .then(res => res.json())
-            .then(data => {
-                if (data.loggedIn) {
-                    // 2. If logged in, fetch their likes to fill the hearts
-                    return fetch('/my-likes');
-                }
-            })
-            .then(res => (res ? res.json() : null))
-            .then(data => {
-                if (data && data.likes) {
-                    // Look at every heart icon on the page
-                    document.querySelectorAll('.like-icon').forEach(icon => {
-                        const itemName = icon.getAttribute('data-name');
-                        // If the item name exists in the user's 'likes' array from MongoDB
-                        if (data.likes.includes(itemName)) {
-                            icon.classList.remove('fa-regular'); // Remove empty heart
-                            icon.classList.add('fa-solid', 'active'); // Add filled red heart
-                        }
-                    });
-                }
-            })
-            .catch(err => console.error("Initialization error:", err));
+// This runs as soon as the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Check if User is Logged In
+    fetch('/check-auth')
+        .then(res => res.json())
+        .then(data => {
+            if (data.loggedIn) {
+                // 2. If logged in, fetch their likes to fill the hearts
+                return fetch('/my-likes');
+            }
+        })
+        .then(res => (res ? res.json() : null))
+        .then(data => {
+            if (data && data.likes) {
+                // Look at every heart icon on the page
+                document.querySelectorAll('.like-icon').forEach(icon => {
+                    const itemName = icon.getAttribute('data-name');
+                    // If the item name exists in the user's 'likes' array from MongoDB
+                    if (data.likes.includes(itemName)) {
+                        icon.classList.remove('fa-regular'); // Remove empty heart
+                        icon.classList.add('fa-solid', 'active'); // Add filled red heart
+                    }
+                });
+            }
+        })
+        .catch(err => console.error("Initialization error:", err));
+});
+
+// 3. The Toggle Function (Runs when you click a heart)
+async function toggleLike(element, itemName) {
+try {
+    const res = await fetch('/like-item', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `itemName=${encodeURIComponent(itemName)}`
     });
 
-    // 3. The Toggle Function (Runs when you click a heart)
-    async function toggleLike(element, itemName) {
-    try {
-        const res = await fetch('/like-item', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `itemName=${encodeURIComponent(itemName)}`
-        });
-
-        if (res.status === 401) {
-            alert("Please log in!");
-            return;
-        }
-
-        const data = await res.json();
-
-        // 1. Check if we are on the Favourites page
-        const isFavouritesPage = window.location.pathname.includes('favourite.html');
-
-        if (data.status === "unliked") {
-            if (isFavouritesPage) {
-                // If on favourites page, remove the whole card from the UI
-                const card = element.closest('.itemCard');
-                card.style.opacity = '0'; // Optional: fade out effect
-                setTimeout(() => card.remove(), 300);
-            } else {
-                // On main page, just toggle the heart look
-                element.classList.replace('fa-solid', 'fa-regular');
-                element.classList.remove('active');
-            }
-        } else {
-            // Item Liked (Only happens on main page)
-            element.classList.replace('fa-regular', 'fa-solid');
-            element.classList.add('active');
-        }
-
-    } catch (err) {
-        console.error("Error toggling like:", err);
+    if (res.status === 401) {
+        alert("Please log in!");
+        return;
     }
 
-    if (document.querySelectorAll('.itemCard').length === 0) {
-    document.querySelector('.UIcollection').innerHTML = "<h3>No saved components.</h3>";
+    const data = await res.json();
+
+    // 1. Check if we are on the Favourites page
+    const isFavouritesPage = window.location.pathname.includes('favourite.html');
+
+    if (data.status === "unliked") {
+        if (isFavouritesPage) {
+            // If on favourites page, remove the whole card from the UI
+            const card = element.closest('.itemCard');
+            card.style.opacity = '0'; // Optional: fade out effect
+            setTimeout(() => card.remove(), 300);
+        } else {
+            // On main page, just toggle the heart look
+            element.classList.replace('fa-solid', 'fa-regular');
+            element.classList.remove('active');
+        }
+    } else {
+        // Item Liked (Only happens on main page)
+        element.classList.replace('fa-regular', 'fa-solid');
+        element.classList.add('active');
+    }
+
+} catch (err) {
+    console.error("Error toggling like:", err);
+}
+
+if (document.querySelectorAll('.itemCard').length === 0) {
+document.querySelector('.UIcollection').innerHTML = "<h3>No saved components.</h3>";
 }
 }
 
@@ -138,3 +138,58 @@ async function checkProAccess() {
 
 // Call this function whenever a component is viewed
 document.addEventListener('DOMContentLoaded', checkProAccess);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const filterContainer = document.querySelector('.componentLinks');
+    const galleryImages = document.querySelectorAll('.itemCard');
+
+    if (!filterContainer) return; 
+
+    filterContainer.addEventListener('click', (event) => {
+        const selectedTarget = event.target;
+
+        if (selectedTarget.classList.contains('component')) {
+            
+            const currentActive = document.querySelector('.menuActive');
+            if (currentActive) {
+                currentActive.classList.remove('menuActive');
+            }
+            selectedTarget.classList.add('menuActive');
+
+            const filterName = selectedTarget.getAttribute('dataName');
+
+            //apply filter
+            galleryImages.forEach((image) => {
+                const imageCategory = image.getAttribute('dataName');
+                
+                if (filterName === 'all' || imageCategory === filterName) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('.searchInput');
+    const cards = document.querySelectorAll('.itemCard');
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+
+        cards.forEach(card => {
+            // Get the category name from the dataname attribute
+            const category = card.getAttribute('dataname').toLowerCase();
+            
+            // Check if the search text matches the category
+            if (category.includes(query)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
