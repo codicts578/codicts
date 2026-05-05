@@ -560,3 +560,19 @@ footer {
         max-width: 100%;
     }
 }
+
+.like-icon.active {
+    color: red !important;
+}
+/* FontAwesome base style */
+.like-icon {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #ccc; /* Default gray for fa-regular */
+}
+
+/* Red style for fa-solid and active class */
+.like-icon.fa-solid, 
+.like-icon.active {
+    color: #ff4d4d !important; /* Forces red */
+}
