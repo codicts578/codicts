@@ -113,17 +113,6 @@ body {
     overflow: auto;
 }
 
-.button-preview-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 10px 0;
-    width: 100%;
-    max-width: 600px;
-}
-
-
 /* ========= RIGHT PANEL ========= */
 .code-panel {
     flex: 1.2;
@@ -263,4 +252,23 @@ textarea.code-textarea {
     background-color: #0f172a;
     cursor: pointer;
     font-size: 15px;
+}
+
+
+.button-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card-preview-container {
+    background: transparent;
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.2s;
+    overflow: hidden;
 }
