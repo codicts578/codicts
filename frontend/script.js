@@ -44,3 +44,10 @@ hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     mobileMenu.classList.toggle("active");
 });
+
+window.addEventListener('click', () => {
+    const menu = document.getElementById('userDropdown');
+    if (menu && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+    }
+});
