@@ -57,7 +57,7 @@ app.post('/signup', async (req, res) => {
         await newUser.save();
         res.redirect('/frontend/Pages/Login and Signup Pages/login.html'); 
     } catch (error) {
-        res.send("Error: Email already exists.");
+        res.send("Error: Could not create user.");
     }
 });
 
