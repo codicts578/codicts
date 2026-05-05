@@ -1,123 +1,112 @@
 (function() {
+    // 1. Single State Management
+    let userData = { loggedIn: false, isPaid: false };
     let isProUser = false;
-    let authChecked = false;
 
-    // Run auth check
+    // 2. Auth Check
     async function initAuth() {
         try {
             const response = await fetch('/check-auth?t=' + Date.now());
             const data = await response.json();
-            isProUser = data.loggedIn && data.isPaid;
-            authChecked = true;
+            userData = data; 
+            isProUser = (data.loggedIn && data.isPaid);
+            updateLockUI(); 
         } catch (err) {
-            isProUser = false;
+            console.error("Auth check failed", err);
         }
     }
-    initAuth();
 
-    // The logic to remove the lock/blur
-    function removeTabBlur() {
-        const codeArea = document.querySelector('.code-editor-area');
-        const lockOverlay = document.querySelector('.paywall-lock');
-        if (codeArea) codeArea.classList.remove('locked-blur');
-        if (lockOverlay) lockOverlay.remove();
-    }
+    // 3. Popup Logic
+    function showPaywallPopup() {
+        if (document.querySelector('.paywall-popup-overlay')) return;
 
-    // The logic to apply the lock/blur
-    function applyTabBlur() {
-        const codeArea = document.querySelector('.code-editor-area');
-        const container = document.querySelector('.code-editor-container');
-        const tabContainer = document.querySelector('.editor-tabs');
-
-        if (!codeArea || document.querySelector('.paywall-lock')) return;
-
-        codeArea.classList.add('locked-blur');
-        const lockOverlay = document.createElement('div');
-        lockOverlay.className = 'paywall-lock';
-        
-        const offset = tabContainer.offsetHeight;
-        lockOverlay.style.top = offset + "px";
-        lockOverlay.style.height = `calc(100% - ${offset}px)`;
-
-        lockOverlay.innerHTML = `
-            <i class="fa-solid fa-lock" style="font-size: 2rem; margin-bottom: 10px; color: #3b82f6;"></i>
-            <h3 style="font-family: 'Archivo Black', sans-serif;">PRO Content</h3>
-            <p style="font-size: 0.8rem; opacity: 0.8;">Subscribe to unlock this platform's code</p>
-            <a href="/frontend/Pages/Subscription Page/payment.html">
-                <button class="paywall-btn">Upgrade Now</button>
-            </a>
-        `;
-        container.appendChild(lockOverlay);
-    }
-
-    // Capture Phase Listener
-    window.addEventListener('click', function(e) {
-        const target = e.target.closest('.tab-btn, #exportCodeBtn, #exportImageBtn, #copyFinalCodeBtn');
-        if (!target) return;
-
-        const activeTab = document.querySelector('.tab-btn.active');
-    const isProTabActive = activeTab && activeTab.classList.contains('pro-link');
-
-        // 1. If it's an Export Button, we block it completely
-        if (target.id === 'exportCodeBtn' || target.id === 'exportImageBtn' || target.id === 'copyFinalCodeBtn') {
-            if (!isProUser && isProTabActive) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
-                
-                if (target.id === 'copyFinalCodeBtn') {
-                // Show a specific alert for copying
-                alert("Please upgrade to PRO to copy this code.");
-            } else {
-                showExportPopup();
-            }
-            return;
-            }
-            return;
-        }
-
-        // 2. If it's a Tab Button
-        if (target.classList.contains('tab-btn')) {
-            // ALWAYS remove the blur first so the user can see the transition
-            removeTabBlur();
-
-            // If it's a PRO tab and they aren't pro, wait a tiny bit and apply blur
-            // We DON'T stop propagation so the original script can highlight the tab
-            if (target.classList.contains('pro-link') && !isProUser) {
-                // setTimeout ensures the "active" class logic in logincomponent.js 
-                // finishes before we overlay our lock
-                setTimeout(applyTabBlur, 10);
-            }
-        }
-    }, true); 
-
-    function showExportPopup() {
-        if (document.querySelector('.paywall-full-overlay')) return;
         const overlay = document.createElement('div');
-        overlay.className = 'paywall-full-overlay';
+        overlay.className = 'paywall-popup-overlay';
+        
+        let btnText = userData.loggedIn ? "Upgrade to Pro" : "Log In and Upgrade";
+        let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription Page/payment.html" : "/frontend/Pages/Login and Signup Pages/login.html";
+        let message = userData.loggedIn 
+            ? "You're logged in! Please upgrade to a Pro plan to export or copy premium source code." 
+            : "Exporting and Copying are reserved for Pro members. Please log in and upgrade to unlock.";
+
         overlay.innerHTML = `
-            <div class="paywall-lock" style="position: relative; width: 320px; height: auto; border-radius: 12px; top: 0; box-shadow: 0 0 50px rgba(0,0,0,0.5);">
-                <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 15px;"></i>
-                <h2 style="font-family: 'Archivo Black', sans-serif;">PRO Feature</h2>
-                <p style="font-size: 0.9rem; margin-bottom: 20px;">Login and Upgrade to PRO to unlock this feature</p>
-                <div style="display: flex; gap: 10px;">
-                    <a href="/frontend/Pages/Subscription Page/payment.html"><button class="paywall-btn">Upgrade</button></a>
-                    <button class="paywall-btn close-btn" style="background: #334155;">Close</button>
+            <div class="paywall-popup-card">
+                <button class="popup-close-btn">&times;</button>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <i class="fa-solid fa-crown" style="color:#3b82f6; font-size:2.5rem; margin-bottom:15px;"></i>
                 </div>
+                <h2>Premium Feature</h2>
+                <p>${message}</p>
+                <a href="${btnLink}" class="pw-primary-btn" style="width:100%; text-align:center; display: block; background: linear-gradient(135deg, #328EB8, #793CE3); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold;">
+                    ${btnText}
+                </a>
             </div>
         `;
+
         document.body.appendChild(overlay);
-        overlay.querySelector('.close-btn').onclick = () => overlay.remove();
+        overlay.querySelector('.popup-close-btn').onclick = () => overlay.remove();
+        overlay.onclick = (e) => { if(e.target === overlay) overlay.remove(); };
     }
-})();
 
+    // 4. UI Logic
+    function updateLockUI() {
+        const codeArea = document.querySelector('.code-editor-area');
+        const activeTab = document.querySelector('.tab-btn.active');
 
-window.addEventListener('keydown', function(e) {
-    const activeTab = document.querySelector('.tab-btn.active');
-    if (activeTab && activeTab.classList.contains('pro-link') && !isProUser) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
-            e.preventDefault();
-            alert("Copying is disabled for PRO content.");
+        const existingLock = codeArea ? codeArea.querySelector('.paywall-lock') : null;
+        if (existingLock) existingLock.remove();
+        if (codeArea) codeArea.classList.remove('locked-blur');
+
+        const isProTab = activeTab && activeTab.classList.contains('pro-link');
+
+        if (isProTab && !isProUser) {
+            if (codeArea) {
+                codeArea.classList.add('locked-blur');
+                const lock = document.createElement('div');
+                lock.className = 'paywall-lock';
+                
+                let btnText = userData.loggedIn ? "Upgrade to Pro" : "Log In and Upgrade";
+                let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription Page/payment.html" : "/frontend/Pages/Login and Signup Pages/login.html";
+
+                lock.innerHTML = `
+                    <div class="access-card" style="display: flex; flex-direction: column; align-items: center;">
+                        <i class="fa-solid fa-crown" style="color:#3b82f6; font-size:2.5rem; margin-bottom:15px;"></i>
+                        <h2 style="color:white; margin:0 0 10px 0; font-family:sans-serif; font-size: 1.3rem;">Pro Feature</h2>
+                        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:25px; text-align: center;">
+                            ${userData.loggedIn ? 'Upgrade to a Pro plan to access this source code.' : 'Log in and upgrade to Pro to access this code.'}
+                        </p>
+                        <a href="${btnLink}" class="pw-primary-btn" style="width: 100%; text-align: center; background: linear-gradient(135deg, #328EB8, #793CE3); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold;">
+                            ${btnText}
+                        </a>
+                    </div>
+                `;
+                codeArea.appendChild(lock);
+            }
         }
     }
-});
+
+    // 5. High-Priority Click Interceptor
+    // Using { capture: true } to stop events before they reach other scripts
+    document.addEventListener('click', (e) => {
+        const activeTab = document.querySelector('.tab-btn.active');
+        const isProTab = activeTab && activeTab.classList.contains('pro-link');
+
+        // Handle Tab Switching
+        if (e.target.closest('.tab-btn')) {
+            setTimeout(updateLockUI, 50);
+            return; // Don't preventDefault on tabs
+        }
+
+        // Handle Copy/Export Interception
+        if (isProTab && !isProUser) {
+            const target = e.target.closest('#exportCodeBtn, #copyFinalCodeBtn, .export-btn, .copy-btn');
+            if (target) {
+                e.preventDefault();
+                e.stopImmediatePropagation(); // Kills the event for all other listeners
+                showPaywallPopup();
+            }
+        }
+    }, { capture: true });
+
+    initAuth();
+})();
