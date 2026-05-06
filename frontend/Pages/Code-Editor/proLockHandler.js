@@ -24,7 +24,7 @@
         overlay.className = 'paywall-popup-overlay';
         
         let btnText = userData.loggedIn ? "Upgrade to Pro" : "Log In and Upgrade";
-        let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription Page/payment.html" : "/frontend/Pages/Login and Signup Pages/login.html";
+        let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription-Page/payment.html" : "/frontend/Pages/Login-and-Signup-Pages/login.html";
         let message = userData.loggedIn 
             ? "You're logged in! Please upgrade to a Pro plan to export or copy premium source code." 
             : "Exporting and Copying are reserved for Pro members. Please log in and upgrade to unlock.";
@@ -66,7 +66,7 @@
                 lock.className = 'paywall-lock';
                 
                 let btnText = userData.loggedIn ? "Upgrade to Pro" : "Log In and Upgrade";
-                let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription Page/payment.html" : "/frontend/Pages/Login and Signup Pages/login.html";
+                let btnLink = userData.loggedIn ? "/frontend/Pages/Subscription-Page/payment.html" : "/frontend/Pages/Login-and-Signup Pages/login.html";
 
                 lock.innerHTML = `
                     <div class="access-card" style="display: flex; flex-direction: column; align-items: center;">
