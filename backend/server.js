@@ -55,7 +55,7 @@ app.post('/signup', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, email, password: hashedPassword });
         await newUser.save();
-        res.redirect('/frontend/Pages/Login and Signup Pages/login.html'); 
+        res.redirect('/frontend/Pages/Login-and-Signup-Pages/login.html'); 
     } catch (error) {
         res.send("Error: Could not create user.");
     }
@@ -66,7 +66,7 @@ app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
-            return res.send("User not found. <a href='/frontend/Pages/Login and Signup Pages/signup.html'>Create an account</a>");
+            return res.send("User not found. <a href='/frontend/Pages/Login-and-Signup-Pages/signup.html'>Create an account</a>");
         }
 
         const isMatch = await bcrypt.compare(req.body.password, user.password);
