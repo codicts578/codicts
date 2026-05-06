@@ -132,7 +132,7 @@ function checkProAccess(authData) {
             overlay.innerHTML = `
                 <i class="fa-solid fa-lock"></i>
                 <p>This is a PRO component</p>
-                <button class="unlock-btn" onclick="window.location.href='/frontend/Pages/Subscription Page/payment.html'">
+                <button class="unlock-btn" onclick="window.location.href='/frontend/Pages/Subscription-Page/payment.html'">
                     Unlock with Pro
                 </button>`;
             codeWrapper.appendChild(overlay);
