@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODICTS | SUBSCRIPTION</title>
+    <!-- Fonts & Icons -->
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
+    </style>
+    <link rel="stylesheet" href="/frontend/Pages/Starter Kits Page/starterKit.css">
+    <link rel="stylesheet" href="/frontend/Pages/Login and Signup Pages/forms.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+
+                <!-- LOGO -->
+                <div class="nav-logo">
+                    <a href="../../../index.html">
+                        <img src="../../../frontend/images/logo2.png" alt="CODICTS Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP NAV -->
+                <ul class="nav-links">
+                    <li><a href="../Components Page/components.html" class="nav-item">Components</a></li>
+                    <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                    <li><a href="../Subscription Page/payment.html" class="nav-item active">Pricing</a></li>
+                </ul>
+
+                <!-- AUTH + HAMBURGER -->
+                <div class="navAuth">
+                    <a href="../Login and Signup Pages/signup.html">
+                        <button id="signupBtn" class="auth-btn">Sign Up</button>
+                    </a>
+
+                    <a href="../Login and Signup Pages/login.html">
+                        <button id="loginBtn" class="auth-btn">Log In</button>
+                    </a>
+
+                    <!-- HAMBURGER ICON -->
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+        <!-- MOBILE SLIDE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../Components Page/components.html">Components</a>
+            <a href="../Starter Kits Page/starterKit.html">Starter Templates</a>
+            <a href="../Subscription Page/payment.html">Pricing</a>
+            <a href="../Login and Signup Pages/signup.html">Sign Up</a>
+            <a href="../Login and Signup Pages/login.html">Log In</a>
+        </div>
+    </header>
+
+    <section class="heroPg" data-aos="fade-down">
+        <div class="heroText">
+            <h1>Upgrade to <strong class="gradient">Codicts Pro</strong></h1>
+            <p>Unlock the full library of UI components and Starter templates. Build faster, smarter and more efficiently.</p>
+        </div>
+    </section>
+
+    <div class="checkout-container">
+        <div class="checkout-card">
+            
+            <!-- LEFT SIDE: Billing Form -->
+            <form class="payment-form" action="/process-payment" method="POST" data-aos="fade-right">
+
+                <section class="form-part" data-aos="fade-up" data-aos-delay="100">
+                    <h3>ACCOUNT INFORMATION</h3>
+                    <div class="input-box">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Mathew" required>
+                    </div>
+                </section>
+
+                <section class="form-part" data-aos="fade-up" data-aos-delay="200">
+                    <h3>BILLING ADDRESS</h3>
+                    <div class="input-box">
+                        <label>Country</label>
+                        <input type="text" name="country" placeholder="Select Country" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Address</label>
+                        <input type="text" name="address" placeholder="123 Street Name" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label>City</label>
+                            <input type="text" name="city" placeholder="New York" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Postal Code</label>
+                            <input type="text" name="code" placeholder="# 1223" required>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-part" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pay-header">
+                        <h3>PAYMENT METHOD</h3>
+                        <div class="card-icons">
+                            <img src="../../../frontend/images/payLogo1.png" alt="Mastercard">
+                            <img src="../../../frontend/images/payLogo2.png" alt="Visa">
+                            <img src="../../../frontend/images/payLogo3.png" alt="Amex">
+                            <img src="../../../frontend/images/payLogo4.png" alt="Discover">
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label>Name on card</label>
+                        <input type="text" name="cardname" placeholder="Full name on card" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Card Number</label>
+                        <input type="text" name="number" placeholder="0000 0000 0000 0000" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label>Expiry Date</label>
+                            <input type="text" name="date" placeholder="MM / YY" required>
+                        </div>
+                        <div class="input-box">
+                            <label>CVV</label>
+                            <input type="text" name="cvv" placeholder="....." required>
+                        </div>
+                    </div>
+                </section>
+                
+                <button type="submit" class="pay-btn" data-aos="zoom-in" data-aos-delay="400">
+                    Subscribe To Pro <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <!-- RIGHT SIDE: Plan Summary -->
+            <section class="plan-summary" data-aos="fade-left">
+                <div class="plan-content">
+                    <span class="plan-badge" data-aos="zoom-in" data-aos-delay="100">MOST POPULAR</span>
+                    
+                    <h2 data-aos="fade-up" data-aos-delay="150">CODICTS PRO PLAN</h2>
+                    <p class="tagline" data-aos="fade-up" data-aos-delay="200">
+                        Everything you need to build faster
+                    </p>
+
+                    <div class="plan-price" data-aos="fade-up" data-aos-delay="250">
+                        <span class="price-symbol">$</span>
+                        <span class="price-amount">9</span>
+                        <div class="price-meta">
+                            <span>/ month</span>
+                            <span class="cancel-anytime">Cancel anytime</span>
+                        </div>
+                    </div>
+
+                    <hr class="divider" data-aos="fade-in" data-aos-delay="300">
+
+                    <ul class="plan-features">
+                        <li data-aos="fade-up" data-aos-delay="350">
+                            <i class="fa-solid fa-circle-check"></i> Full UI component library
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="fa-solid fa-circle-check"></i> Full starter template library
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="450">
+                            <i class="fa-solid fa-circle-check"></i> Multi-framework support (HTML, CSS, React)
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="500">
+                            <i class="fa-solid fa-circle-check"></i> Download production-ready code files
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="550">
+                            <i class="fa-solid fa-circle-check"></i> Download design previews as images
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="600">
+                            <i class="fa-solid fa-circle-check"></i> Weekly new components & updates
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="650">
+                            <i class="fa-solid fa-circle-check"></i> Early access to new features
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-total" data-aos="fade-up" data-aos-delay="600">
+                    <span class="total-label">Total</span>
+                    <span class="total-value"><strong>$9</strong> / month</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerContent">
+            <div class="intro">
+                <h3>CODICTS</h3>
+                <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
+                <p class="slogan">Design smarter. Code faster.</p>
+            </div>
+
+            <div class="products">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="../../../frontend/Pages/Components Page/components.html">Components</a></li>
+                    <li><a href="../../../frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
+                    <li><a href="../../../frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <h3>Connect</h3>
+                <p>Follow Codicts for product updates, new components and UI inspiration</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_codicts_"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575483250009"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@_codicts_"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+    </script>
+
+    <!-- Scripts -->
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('redirectPath').value = urlParams.get('redirect') || '/';
+    </script>
+    
+    <script src="/frontend/script.js"></script>
+</body>
+</html>
