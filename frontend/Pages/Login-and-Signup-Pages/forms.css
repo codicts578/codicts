@@ -1,0 +1,528 @@
+body {
+    /* Background Image setup */
+    background-image: url(../../../frontend/images/formPagesBg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-color: #000;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* --- Navigation Bar --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 10, 15, 0.8); 
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(121, 60, 227, 0.15);
+    padding: 5px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    position: relative;
+}
+
+/* --- Proper Logo Display --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a img {
+    height: 100px; 
+    width: auto;  
+    object-fit: contain; 
+    transition: transform 0.3s ease;
+    display: block;
+    transform: translateY(3px);
+}
+
+.nav-logo a img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Auth Buttons Gap --- */
+.navAuth {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+#signupBtn, #loginBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#signupBtn {
+    background: linear-gradient(135deg, #328EB8 0%, #793CE3 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(121, 60, 227, 0.2);
+}
+
+#loginBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+#signupBtn:hover, #loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(121, 60, 227, 0.4);
+}
+
+/* --- Center Menu Items --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 45px; 
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E55EEE, #006FCF);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    z-index: 2000;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: rgba(11, 10, 15, 0.97);
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    padding: 120px 30px;
+    gap: 25px;
+
+    z-index: 9999; 
+
+    transform: translateX(110%);
+    transition: transform 0.35s ease-in-out;
+
+    border-left: 1px solid rgba(121, 60, 227, 0.25);
+}
+
+/* ACTIVE STATE */
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* links */
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.mobile-menu a:hover {
+    opacity: 1;
+    color: #E55EEE;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    #signupBtn,
+    #loginBtn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Container Background & Spacing */
+.containerBg {
+    position: relative;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Spacing from Nav Bar */
+    padding: 100px 20px; 
+    overflow: hidden;
+}
+
+.signupContainer {
+    position: relative;
+    z-index: 2;
+    background: rgba(10, 10, 10, 0.6); 
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 50px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    text-align: left;
+}
+
+/* Adjusting the glow to be more subtle over an image */
+.form-glow {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(63, 177, 229, 0.15), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(120px);
+    z-index: 1;
+    pointer-events: none;
+}
+.formHeader h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.blue-text {
+    color: #3FB1E5;
+}
+
+.formHeader p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Form Groups & Inputs */
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.formGroup input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.formGroup input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.formGroup input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #3FB1E5;
+    box-shadow: 0 0 15px rgba(63, 177, 229, 0.2);
+}
+
+/* Submit Button */
+.submitBtn {
+    position: relative;
+    width: 100%;
+    padding: 18px;
+    background: #3FB1E5;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(63, 177, 229, 0.4);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.submitBtn:hover .btn-shine {
+    left: 100%;
+}
+
+/* Login Prompt */
+.login-prompt {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-prompt a {
+    color: #3FB1E5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .signupContainer {
+        padding: 30px 20px;
+    }
+    .formHeader h2 {
+        font-size: 26px;
+    }
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left; 
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 60px;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    justify-content: start; 
+    align-items: start;
+}
+.intro, .products, .contact {
+    text-align: left;
+}
+
+.footerContent h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footerContent p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.intro .slogan {
+    font-weight: 800; 
+    font-size: 1.1rem;
+    display: inline-block;
+    
+    /* Gradient Effect */
+    background: linear-gradient(90deg, #3FB1E5 0%, #b60890 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    
+    filter: drop-shadow(0 0 5px rgba(63, 177, 229, 0.2));
+    
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* List Styling */
+.footerContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+}
+
+.footerContent ul li {
+    margin-bottom: 12px;
+}
+
+.footerContent ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    display: inline-block; 
+}
+
+.footerContent ul li a:hover {
+    color: white;
+    transform: translateX(8px); 
+}
+
+/* Social Links - Left Aligned Flexbox */
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* Forces icons to the left */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-links i {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+}
+
+.social-links i:hover {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Copyright - The ONLY centered part */
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile Fixes */
+@media (max-width: 900px) {
+    .footerContent {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footerContent {
+        grid-template-columns: 1fr;
+    }
+    .intro, .products, .contact {
+        max-width: 100%;
+    }
+}
