@@ -21,7 +21,7 @@ fetch('/check-auth')
                             <i class="fa-solid fa-user"></i> ${data.username}
                         </button>
                         <div id="userDropdown" class="user-dropdown-content">
-                            <a href="/frontend/Pages/Favourites Page/favourites.html">My Favorites</a>
+                            <a href="/frontend/Pages/Favourites-Page/favourites.html">My Favorites</a>
                             <a href="/logout" style="color: red;">Logout</a>
                         </div>
                     </div>
