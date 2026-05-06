@@ -70,7 +70,7 @@
 
                 lock.innerHTML = `
                     <div class="access-card" style="display: flex; flex-direction: column; align-items: center;">
-                        <i class="fa-solid fa-crown" style="color:#3b82f6; font-size:2.5rem; margin-bottom:15px;"></i>
+                        <i class="fa-solid fa-crown" style="color:#f59e0b; font-size:2.5rem; margin-bottom:15px;"></i>
                         <h2 style="color:white; margin:0 0 10px 0; font-family:sans-serif; font-size: 1.3rem;">Pro Feature</h2>
                         <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:25px; text-align: center;">
                             ${userData.loggedIn ? 'Upgrade to a Pro plan to access this source code.' : 'Log in and upgrade to Pro to access this code.'}
