@@ -579,10 +579,9 @@ header {
 }
 
 .icon-wrapper i {
-    width: 32px;
-    height: 32px;
+    font-size: 28px;
+    line-height: 1;
 }
-
 .box h4 {
     font-size: 24px;
     color: white;
@@ -769,6 +768,11 @@ header {
     justify-content: center;
     margin-bottom: 25px;
     color: white;
+}
+
+.feature-icon i {
+    font-size: 25px;
+    line-height: 1;
 }
 
 .blue-card .feature-icon { color: #3FB1E5; }
