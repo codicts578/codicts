@@ -5,14 +5,18 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session'); // 1. ADDED THIS
+const cors = require('cors');
+
 
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..')));
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
 app.use(express.static('frontend'));
+
 
 // 2. ADDED SESSION MIDDLEWARE (Must be before routes)
 app.use(session({
@@ -130,7 +134,7 @@ app.get('/my-likes', async (req, res) => {
     res.json({ likes: user.likes });
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/check-auth', async (req, res) => {
     console.log("Session ID checking auth:", req.session.userId); // Debug log
