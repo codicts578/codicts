@@ -30,8 +30,8 @@ function showStarterPaywall(isLoggedIn) {
     overlay.className = 'starter-paywall-overlay';
     
     const currentPath = window.location.pathname;
-    const loginLink = `/frontend/Pages/Login and Signup Pages/login.html`;
-    const pricingLink = `/frontend/Pages/Subscription Page/payment.html?redirect=${encodeURIComponent(currentPath)}`;
+    const loginLink = `/frontend/Pages/Login-and-Signup-Pages/login.html`;
+    const pricingLink = `/frontend/Pages/Subscription-Page/payment.html?redirect=${encodeURIComponent(currentPath)}`;
 
     overlay.innerHTML = `
         <div class="starter-paywall-modal">
