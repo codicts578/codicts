@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../frontend/style.css">
+    <link rel="stylesheet" href="components.css">
+    <script src="components.js"></script>
+    <link rel="icon" type="image/png" href="../../../frontend/images/icon1.png">
+    <title>CODICTS | COMPONENTS</title>
+    <!-- Fonts & Icons -->
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="../../../index.html">
+                    <img src="../../../frontend/images/logo2.png" alt="CODICTS Logo">
+                </a>
+            </div>
+
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a href="../Components Page/components.html" class="nav-item active">Components</a></li>
+                <li><a href="../Starter Kits Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                <li><a href="../Subscription Page/payment.html" class="nav-item">Pricing</a></li>
+            </ul>
+
+            <!-- AUTH + HAMBURGER -->
+            <div class="navAuth">
+                <a href="../Login and Signup Pages/signup.html">
+                    <button id="signupBtn" class="auth-btn">Sign Up</button>
+                </a>
+
+                <a href="../Login and Signup Pages/login.html">
+                    <button id="loginBtn" class="auth-btn">Log In</button>
+                </a>
+
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- MOBILE SLIDE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../Components Page/components.html">Components</a>
+        <a href="../Starter Kits Page/starterKit.html">Starter Templates</a>
+        <a href="../Subscription Page/payment.html">Pricing</a>
+        <a href="../Login and Signup Pages/signup.html">Sign Up</a>
+        <a href="../Login and Signup Pages/login.html">Log In</a>
+    </div>
+</header>
+
+        <section class="heroPg">
+    <div class="container hero-content">
+        <div class="heroText" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Build Interfaces <span class="gradient">Faster</span> with Ready-Made UI Components</h1>
+            <p>Browse and preview ready-to-use UI components. Copy code directly into your project.</p>
+        </div>
+        
+        <div class="searchBar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="search-wrapper">
+                <input class="searchInput" type="text" placeholder="Search UI components (buttons, cards, forms...)">
+                <button class="searchBtn">Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main id="componentsCollection">
+    <div class="componentContainer">
+        <!-- Filter Chips -->
+        <div class="componentLinks" data-aos="fade-down" data-aos-delay="100">
+            <span class="component menuActive" dataName="all">All</span>
+            <span class="component" dataName="buttons">Buttons</span>
+            <span class="component" dataName="cards">Cards</span>
+            <span class="component" dataName="forms">Forms</span>
+            <span class="component" dataName="inputs">Inputs</span>
+            <span class="component" dataName="loaders">Loaders</span>
+        </div>
+
+        <!-- UI Collection Grid -->
+        <div class="UIcollection">
+            
+            <!-- Card 1 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="100" dataname="buttons">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/button1.mp4" type="video/mp4" alt="Button Component 1">
+                    </video>
+                    <div class="tag free">FREE</div>
+                </div>
+                <div class="card-footer">
+                    <a href="../../../frontend/Pages/Design and Code Editor/Buttons/Button 1/buttonComponent1.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Button Component 1')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="200" dataname="buttons">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/button2.mp4" type="video/mp4" alt="Button Component 2">
+                    </video>
+                    <div class="tag free">FREE</div>
+                </div>
+                <div class="card-footer">
+                    <a href="../../../frontend/Pages/Design and Code Editor/Buttons/Button 2/buttonComponent2.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Button Component 2')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="300" dataname="buttons">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/button3.mp4" type="video/mp4" alt="Button Component 3">
+                    </video>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Buttons/Button 3/buttonComponent3.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Button Component 3')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="400" dataname="buttons">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/button4.mp4" type="video/mp4" alt="Button Component 4">
+                    </video>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Buttons/Button 4/buttonComponent4.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Button Component 4')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="500" dataname="cards">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/card1.mp4" type="video/mp4" alt="Card Component 1">
+                    </video>
+                    <div class="tag free">FREE</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Cards/Card 1/cardComponent1.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Card Component 1')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="100" dataname="cards">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/card2.mp4" type="video/mp4" alt="Card Component 2">
+                    </video>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Cards/Card 2/cardComponent2.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Card Component 2')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="itemCard" dataname="cards" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="itemImg">
+                    <video autoplay loop muted playsinline class="short-video">
+                        <source src="../../../frontend/images/Components Page/card3.mp4" type="video/mp4" alt="Card Component 3">
+                    </video>
+                    <div class="tag pro">PRO</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Cards/Card 3/cardComponent3.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Card Component 3')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="itemCard" data-aos="zoom-in-up" data-aos-delay="300" dataname="forms">
+                <div class="itemImg">
+                    <img src="../../../frontend/images/Components Page/Form1.png" alt="Form Component 1">
+                    <div class="tag free">FREE</div>
+                </div>
+                <div class="card-footer">
+                    <a href="/frontend/Pages/Design and Code Editor/Forms/Login Forms/loginComponent1.html">
+                        <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
+                    </a>
+                    <div class="heart-wrapper">
+                        <i class="fa-regular fa-heart like-icon" onclick="toggleLike(this, 'Component 8')"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footerContent">
+        <div class="intro">
+            <h3>CODICTS</h3>
+            <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
+            <p class="slogan">Design smarter. Code faster.</p>
+        </div>
+
+        <div class="products">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="../../../frontend/Pages/Components Page/components.html">Components</a></li>
+                <li><a href="../../../frontend/Pages/Starter Kits Page/starterKit.html">Starter Templates</a></li>
+                <li><a href="../../../frontend/Pages/Subscription Page/payment.html">Pricing</a></li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <h3>Connect</h3>
+            <p>Follow Codicts for product updates, new components and UI inspiration</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_codicts_"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61575483250009"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@_codicts_"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+    </div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script> AOS.init(); </script>
+
+    <script src="/frontend/script.js"></script>
+    <script src="/frontend/Pages/Favourites Page/data.js"></script>    
+    <script src="components.js"></script>
+
+</body>
+</html>
