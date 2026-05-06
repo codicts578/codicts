@@ -136,6 +136,7 @@ app.get('/my-likes', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
+
 app.get('/check-auth', async (req, res) => {
     console.log("Session ID checking auth:", req.session.userId); // Debug log
     
@@ -187,5 +188,6 @@ app.post('/process-payment', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
