@@ -1,0 +1,148 @@
+/* Copy Animation */
+        @keyframes copySuccess {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .copy-animation {
+            animation: copySuccess 0.3s ease;
+        }       
+
+/* Neon Form Styles - Dynamic */
+        .neon-form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            width: 100%;
+        }
+        
+        .form-card {
+            background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+            border-radius: 22px;
+            width: 24em;
+            transition: all 0.3s;
+        }
+        
+        .form-card-inner {
+            border-radius: 0;
+            transition: all 0.2s;
+        }
+        
+        .form-card-inner:hover {
+            transform: scale(0.98);
+            border-radius: 20px;
+        }
+        
+        .neon-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 20em;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-bottom: 0.4em;
+            background-color: #171717;
+            border-radius: 25px;
+            transition: 0.4s ease-in-out;
+        }
+        
+        #formHeading {
+            text-align: center;
+            margin: 2em;
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .neon-field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            border-radius: 25px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #171717;
+            box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+        }
+        
+        .input-icon {
+            height: 1.3em;
+            width: 1.3em;
+            fill: white;
+        }
+        
+        .neon-input {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #d3d3d3;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        
+        .neon-input::placeholder {
+            color: #666;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 2.5em;
+            gap: 0.5em;
+        }
+        
+        .login-btn, .signup-btn {
+            padding: 0.5em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #252525;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+        }
+        
+        .login-btn {
+            padding-left: 1.1em;
+            padding-right: 1.1em;
+        }
+        
+        .signup-btn {
+            padding-left: 2.3em;
+            padding-right: 2.3em;
+        }
+        
+        .login-btn:hover, .signup-btn:hover {
+            background-color: black;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .forgot-btn {
+            margin-bottom: 3em;
+            margin-top: 1em;
+            padding: 0.5em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #252525;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        .forgot-btn:hover {
+            background-color: red;
+            color: white;
+            transform: translateY(-2px);
+        }
