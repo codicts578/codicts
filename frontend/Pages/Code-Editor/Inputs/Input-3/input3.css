@@ -1,0 +1,23 @@
+.aurora-input {
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    background: white;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+.aurora-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+.aurora-input:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.2);
+    transform: scale(1.02);
+}
