@@ -51,27 +51,3 @@ window.addEventListener('click', () => {
         menu.classList.remove('show');
     }
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Extract the filter from the URL (?filter=buttons)
-    const urlParams = new URLSearchParams(window.location.search);
-    const filterValue = urlParams.get('filter');
-
-    // 2. Select all your component cards/items
-    const items = document.querySelectorAll('.component-item');
-
-    if (filterValue) {
-        filterComponents(filterValue);
-    }
-
-    function filterComponents(category) {
-        items.forEach(item => {
-            // If category is 'all' or matches the data-category attribute
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.style.display = 'block'; 
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-});
