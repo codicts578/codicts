@@ -254,6 +254,17 @@ textarea.code-textarea {
     overflow: hidden;
 }
 
+.input-preview-container {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #eef2ff;
+    width: 100%;
+}
+
 
 /* 1. Create the container layer */
 .code-editor-area {
