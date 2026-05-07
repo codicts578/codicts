@@ -169,3 +169,48 @@ function renderComponents(itemsToRender) {
         AOS.refresh();
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Select elements
+    const filterChips = document.querySelectorAll(".component");
+    const itemCards = document.querySelectorAll(".itemCard");
+
+    // 2. Check URL for filter (e.g., components.html?filter=buttons)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialFilter = urlParams.get('filter');
+
+    // 3. Function to apply the filter
+    const applyFilter = (category) => {
+        // Update active class on chips
+        filterChips.forEach(chip => {
+            if (chip.getAttribute("dataName") === category) {
+                chip.classList.add("menuActive");
+            } else {
+                chip.classList.remove("menuActive");
+            }
+        });
+
+        // Show/Hide Cards
+        itemCards.forEach(card => {
+            const cardCategory = card.getAttribute("dataname");
+            if (category === "all" || cardCategory === category) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    };
+
+    // 4. Run filter on page load if parameter exists
+    if (initialFilter) {
+        applyFilter(initialFilter);
+    }
+
+    // 5. Add click listeners for manual filtering on this page
+    filterChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+            const category = chip.getAttribute("dataName");
+            applyFilter(category);
+        });
+    });
+});
