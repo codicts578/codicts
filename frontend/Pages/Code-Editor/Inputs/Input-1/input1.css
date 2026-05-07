@@ -1,0 +1,44 @@
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.form__field {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    padding: 10px 0 8px 0;
+    background: transparent;
+    transition: border-color 0.2s, border-image 0.2s, padding 0.2s;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__label {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    display: block;
+    transition: 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    font-weight: 500;
+    transform-origin: left center;
+    letter-spacing: -0.01em;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 600;
+    border-bottom-width: 3px;
+}
+
+/* Floating label animation states */
+.form__field:focus ~ .form__label,
+.form__field:not(:placeholder-shown) ~ .form__label {
+    transform: translateY(-24px) scale(0.85);
+    font-weight: 600;
+}
