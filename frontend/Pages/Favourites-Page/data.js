@@ -9,7 +9,7 @@ const UI_COMPONENTS = [
     { name: "Card Component 2", category: "cards", tag: "PRO", src: "../../../frontend/images/Components-Page/card2.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Cards/Card-2/cardComponent2.html" },
     { name: "Card Component 3", category: "cards", tag: "PRO", src: "../../../frontend/images/Components-Page/card3.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Cards/Card-3/cardComponent3.html" },
 
-    { name: "Form Component 1", category: "forms", tag: "FREE", src: "../../../frontend/images/Components-Page/Form1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Login-Forms/loginComponent1.html" }
+    { name: "Form Component 1", category: "forms", tag: "FREE", src: "../../../frontend/images/Components-Page/Form1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Form-1/loginComponent1.html" }
 ];
 
 function generateCardHTML(item, isLiked, index) { // Added index here
