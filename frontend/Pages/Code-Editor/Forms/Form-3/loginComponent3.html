@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../editorPages.css">
+    <link rel="stylesheet" href="loginComponent3.css">
+    <link rel="stylesheet" href="/frontend/style.css">
+    <title>CODICTS | CODE EDITOR</title>
+    <!-- Fonts & Icons -->
+    <script src="https://kit.fontawesome.com/3c1f4843e4.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&display=swap');
+    </style>
+    <link rel="icon" type="image/png" href="/frontend/images/icon1.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+
+                <!-- LOGO -->
+                <div class="nav-logo">
+                    <a href="/index.html">
+                        <img src="/frontend/images/logo2.png" alt="CODICTS Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP NAV -->
+                <ul class="nav-links">
+                    <li><a href="../../../Components-Page/components.html" class="nav-item">Components</a></li>
+                    <li><a href="../../../Starter-Kits-Page/starterKit.html" class="nav-item">Starter Templates</a></li>
+                    <li><a href="../../../Subscription-Page/payment.html" class="nav-item">Pricing</a></li>
+                </ul>
+
+                <!-- AUTH + HAMBURGER -->
+                <div class="navAuth">
+                    <a href="/frontend/Pages/Login-and-Signup-Pages/signup.html">
+                        <button id="signupBtn" class="auth-btn">Sign Up</button>
+                    </a>
+
+                    <a href="/frontend/Pages/Login-and-Signup-Pages/login.html">
+                        <button id="loginBtn" class="auth-btn">Log In</button>
+                    </a>
+
+                    <!-- HAMBURGER ICON -->
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+        <!-- MOBILE SLIDE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../Components-Page/components.html">Components</a>
+            <a href="../Starter-Kits-Page/starterKit.html">Starter Templates</a>
+            <a href="../Subscription-Page/payment.html">Pricing</a>
+            <a href="../Login-and-Signup-Pages/signup.html">Sign Up</a>
+            <a href="../Login-and-Signup-Pages/login.html">Log In</a>
+        </div>
+</header>
+
+    <div class="split-container">
+        <!-- LEFT: DESIGN PANEL -->
+        <div class="design-panel">
+            <div class="design-header">
+                <h3>Design Preview</h3>
+                <div class="action-group ">
+                    <button class="code-action-btn" id="exportImageBtn"><i class="fa-solid fa-download"></i> Download PNG</button>
+                </div>
+            </div>
+            
+            <div class="design-canvas" id="formCanvas">
+                <canvas id="particleCanvas"></canvas>
+                <div id="liveFormContainer" style="position: relative; z-index: 2; width: 100%; max-width: 420px;"></div>
+            </div>
+            
+            <div class="design-header">
+                <h3>Customization Panel</h3>
+            </div>
+            <div class="editable-toolbar">
+                <div class="tool-group"><label>Primary Color</label><input type="color" id="primaryColor" value="#667eea"></div>
+                <div class="tool-group"><label>Secondary Color</label><input type="color" id="secondaryColor" value="#764ba2"></div>
+                <div class="tool-group"><label>Text Color</label><input type="color" id="textColor" value="#ffffff"></div>
+                <div class="tool-group"><label>Form Radius</label><select id="formRadius"><option value="16px">Soft</option><option value="24px" selected>Rounded</option><option value="32px">Large</option><option value="50px">Pill</option></select></div>
+                <div class="tool-group"><label>Animation Speed</label><select id="animSpeed"><option value="0.2s">Fast</option><option value="0.4s" selected>Normal</option><option value="0.6s">Slow</option></select></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: CODE PANEL with enhanced export -->
+        <div class="code-panel">
+            <div class="code-header">
+                <h3>Code View</h3>
+                <div class="action-group ">
+                    <button class="code-action-btn syncs" id="syncFromCodeBtn">Sync Code</button>
+                    <button class="code-action-btn" id="exportCodeBtn"><i class="fa-solid fa-download"></i> Export Code File</button>
+                    <button class="code-action-btn primary" id="copyFinalCodeBtn"><i class="fa-regular fa-clipboard"></i> Copy Code</button>
+                </div>
+            </div>
+            <div class="editor-tabs">
+                <button class="tab-btn active" data-platform="web"><i class="fa-brands fa-html5"></i> Web (HTML/CSS/JS)</button>
+                <button class="tab-btn" data-platform="react"><i class="fa-brands fa-react"></i> React (TSX)</button>
+                <button class="tab-btn" data-platform="android"><i class="fa-brands fa-android"></i> Android (XML)</button>
+                <button class="tab-btn" data-platform="tkinter"><i class="fa-brands fa-python"></i> Tkinter (Python)</button>
+            </div>
+            <div class="code-editor-area ">
+                <textarea id="codeEditor" class="code-textarea" spellcheck="false"></textarea>
+            </div>
+            <div style="padding: 0.3rem 1rem; background:#0f172a; display: flex; justify-content: space-between; font-size:0.65rem;">
+                <span>Code updated automatically</span>
+                <span class="sync-status" id="syncStatus">✓ live sync</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    <div class="footerContent">
+        <div class="intro">
+            <h3>CODICTS</h3>
+            <p>Codicts provides modern UI components and starter templates designed to help developers and students build interfaces faster and more efficiently.</p>
+            <p class="slogan">Design smarter. Code faster.</p>
+        </div>
+
+        <div class="products">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="../Components-Page/components.html">Components</a></li>
+                <li><a href="../Starter-Kits-Page/starterKit.html">Starter Templates</a></li>
+                <li><a href="../Subscription-Page/payment.html">Pricing</a></li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <h3>Connect</h3>
+            <p>Follow Codicts for product updates, new components and UI inspiration</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_codicts_"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61575483250009"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@_codicts_"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2026 Codicts. All rights reserved. Design smarter. Code faster.</p>
+    </div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script> AOS.init(); </script>
+
+    <script src="/frontend/script.js"></script>
+    <script src="loginComponent3.js"></script>
+</body>
+</html>
