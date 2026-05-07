@@ -1,0 +1,75 @@
+.loader-preview-container {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: all 0.2s;
+    border: 1px solid #eef2ff;
+}
+.live-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    position: relative;
+}
+.loader-text {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.radial-puzzle {
+    width: 44.8px;
+    height: 44.8px;
+    color: #000000;
+    position: relative;
+    background: radial-gradient(11.2px, currentColor 94%, #0000);
+}
+
+.radial-puzzle:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(10.08px at bottom right, #0000 94%, currentColor) top left,
+                radial-gradient(10.08px at bottom left, #0000 94%, currentColor) top right,
+                radial-gradient(10.08px at top right, #0000 94%, currentColor) bottom left,
+                radial-gradient(10.08px at top left, #0000 94%, currentColor) bottom right;
+    background-size: 22.4px 22.4px;
+    background-repeat: no-repeat;
+    animation: radialPulse 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes radialPulse {
+    33% {
+        inset: -11.2px;
+        transform: rotate(0deg);
+    }
+    66% {
+        inset: -11.2px;
+        transform: rotate(90deg);
+    }
+    100% {
+        inset: 0;
+        transform: rotate(90deg);
+    }
+}
+
+/* Wrapper for size customization */
+.radial-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+}
