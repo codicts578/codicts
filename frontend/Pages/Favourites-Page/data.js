@@ -9,7 +9,20 @@ const UI_COMPONENTS = [
     { name: "Card Component 2", category: "cards", tag: "PRO", src: "../../../frontend/images/Components-Page/card2.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Cards/Card-2/cardComponent2.html" },
     { name: "Card Component 3", category: "cards", tag: "PRO", src: "../../../frontend/images/Components-Page/card3.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Cards/Card-3/cardComponent3.html" },
 
-    { name: "Form Component 1", category: "forms", tag: "FREE", src: "../../../frontend/images/Components-Page/Form1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Form-1/loginComponent1.html" }
+    { name: "Form Component 1", category: "forms", tag: "PRO", src: "../../../frontend/images/Components-Page/Form1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Form-1/loginComponent1.html" },
+    { name: "Form Component 2", category: "forms", tag: "PRO", src: "../../../frontend/images/Components-Page/form2.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Forms/Form-2/loginComponent2.html" },
+    { name: "Form Component 3", category: "forms", tag: "FREE", src: "../../../frontend/images/Components-Page/form3.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Form-3/loginComponent3.html" },
+    { name: "Form Component 4", category: "forms", tag: "FREE", src: "../../../frontend/images/Components-Page/form4.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Forms/Form-4/loginComponent4.html" },
+
+    { name: "Input Component 1", category: "inputs", tag: "FREE", src: "../../../frontend/images/Components-Page/input1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Inputs/Input-1/input1.html" },
+    { name: "Input Component 2", category: "inputs", tag: "PRO", src: "../../../frontend/images/Components-Page/input-2.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Inputs/Input-2/input2.html" },
+    { name: "Input Component 3", category: "inputs", tag: "FREE", src: "../../../frontend/images/Components-Page/input3.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Inputs/Input-3/input3.html" },
+
+    { name: "Loader Component 1", category: "loaders", tag: "PRO", src: "../../../frontend/images/Components-Page/loader1.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-1/loader1.html" },
+    { name: "Loader Component 2", category: "loaders", tag: "FREE", src: "../../../frontend/images/Components-Page/loader2.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-2/loader2.html" },
+    { name: "Loader Component 3", category: "loaders", tag: "PRO", src: "../../../frontend/images/Components-Page/loader3.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-3/loader3.html" },
+    { name: "Loader Component 4", category: "loaders", tag: "FREE", src: "../../../frontend/images/Components-Page/loader4.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-4/loader4.html" },
+    { name: "Loader Component 5", category: "loaders", tag: "PRO", src: "../../../frontend/images/Components-Page/loader5.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-5/loader5.html" }
 ];
 
 function generateCardHTML(item, isLiked, index) { // Added index here
