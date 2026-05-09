@@ -18,12 +18,12 @@ app.use(express.static(path.join(__dirname, '..', 'frontend')));
 app.use(express.static('frontend'));
 
 
-// 2. ADDED SESSION MIDDLEWARE (Must be before routes)
+// SESSION MIDDLEWARE 
 app.use(session({
-    secret: 'codicts_secret_key', // You can change this to any random string
+    secret: 'codicts_secret_key', 
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 3600000 } // Session expires in 1 hour
+    cookie: { maxAge: 3600000 } 
 }));
 
 // MongoDB Atlas Connection
@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     likes: [String], // Array of Strings to store item IDs or names
-    isPaid: { type: Boolean, default: false } // NEW: Defaults to false
+    isPaid: { type: Boolean, default: false } // 
 
 });
 
