@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const path = require('path');
-const session = require('express-session'); // 1. ADDED THIS
+const session = require('express-session'); 
 const cors = require('cors');
 
 
@@ -65,7 +65,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-// 2. UPDATED LOGIN: Now creates a session and redirects to homepage
+// 2. LOGIN:
 app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
@@ -90,7 +90,7 @@ app.post('/login', async (req, res) => {
 });
 
 
-// 4. NEW ROUTE: Logout
+// Logout
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/');
@@ -153,7 +153,7 @@ app.get('/check-auth', async (req, res) => {
         res.json({ 
             loggedIn: true, 
             username: user.username, 
-            isPaid: !!user.isPaid // The !! forces it to be true or false
+            isPaid: !!user.isPaid 
         });
     } catch (error) {
         console.error("Auth route error:", error);
@@ -165,7 +165,6 @@ app.get('/check-auth', async (req, res) => {
 app.post('/process-payment', async (req, res) => {
     if (!req.session.userId) return res.send("Please login.");
 
-    // Capture the path from the hidden input
     const redirectTo = req.body.redirectPath || '/index.html'; 
 
     try {
