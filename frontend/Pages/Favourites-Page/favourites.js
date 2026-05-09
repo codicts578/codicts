@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const savedItems = UI_COMPONENTS.filter(comp => data.likes.includes(comp.name));
 
         // 3. Render using your data.js function
-        // We pass 'true' because we know these are all liked
         collection.innerHTML = savedItems.map(item => generateCardHTML(item, true)).join('');
 
     } catch (err) {
