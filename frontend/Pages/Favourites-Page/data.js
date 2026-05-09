@@ -1,4 +1,3 @@
-// data.js
 const UI_COMPONENTS = [
     { name: "Button Component 1", category: "buttons", tag: "FREE", src: "../../../frontend/images/Components-Page/button1.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Buttons/Button-1/buttonComponent1.html" },
     { name: "Button Component 2", category: "buttons", tag: "FREE", src: "../../../frontend/images/Components-Page/button2.mp4", mediaType: "video", link: "/frontend/Pages/Code-Editor/Buttons/Button-2/buttonComponent2.html" },
@@ -25,10 +24,9 @@ const UI_COMPONENTS = [
     { name: "Loader Component 5", category: "loaders", tag: "PRO", src: "../../../frontend/images/Components-Page/loader5.png", mediaType: "image", link: "/frontend/Pages/Code-Editor/Loaders/Loader-5/loader5.html" }
 ];
 
-function generateCardHTML(item, isLiked, index) { // Added index here
+function generateCardHTML(item, isLiked, index) { 
     const iconClass = isLiked ? 'fa-solid active' : 'fa-regular';
     
-    // This calculates a staggered delay (100ms, 200ms, 300ms...)
     const delay = (index % 5 + 1) * 100; 
 
     const media = item.mediaType === 'video' 
@@ -55,29 +53,3 @@ function generateCardHTML(item, isLiked, index) { // Added index here
         </div>
     `;
 }
-
-
-//without animations
-//function generateCardHTML(item, isLiked) {
-//    const iconClass = isLiked ? 'fa-solid active' : 'fa-regular';
-//    const media = item.mediaType === 'video' 
-//        ? `<video autoplay loop muted playsinline class="short-video"><source src="${item.src}" type="video/mp4"></video>`
-//        : `<img src="${item.src}" alt="${item.name}">`;
-
-//    return `
-//        <div class="itemCard" dataname="${item.category}">
-//            <div class="itemImg">
-//                ${media}
-//                <div class="tag ${item.tag.toLowerCase()}">${item.tag}</div>
-//            </div>
-//            <div class="card-footer">
-//                <a href="${item.link}">
-//                    <button class="view-btn">View Component <i class="fa-solid fa-arrow-right-long"></i></button>
-//                </a>
-//                <div class="heart-wrapper">
-//                    <i class="${iconClass} fa-heart like-icon" onclick="toggleLike(this, '${item.name}')"></i>
-//                </div>
-//            </div>
-//        </div>
-//    `;
-//}
