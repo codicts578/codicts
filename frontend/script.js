@@ -2,7 +2,7 @@ function toggleMenu() {
     const menu = document.getElementById('userDropdown');
     if (menu) {
         menu.classList.toggle('show');
-        console.log("Menu toggled!"); // Debug check: look at your browser console (F12)
+        console.log("Menu toggled!"); 
     } else {
         console.error("Dropdown element not found");
     }
@@ -27,7 +27,6 @@ fetch('/check-auth')
                     </div>
                 `;
                 
-                // 3. Attach listener manually (Safer than inline onclick)
                 document.getElementById('menuBtn').addEventListener('click', (e) => {
                     e.stopPropagation(); // Prevents the window click from closing it instantly
                     toggleMenu();
