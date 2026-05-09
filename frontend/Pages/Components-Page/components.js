@@ -1,4 +1,4 @@
-// ONE UNIFIED INITIALIZATION
+// INITIALIZATION
 async function initUI() {
     const collection = document.querySelector('.UIcollection');
     if (!collection) return;
@@ -12,7 +12,6 @@ async function initUI() {
         if (authData.loggedIn) {
             const likesRes = await fetch('/my-likes');
             const likesData = await likesRes.json();
-            // Ensure we handle the array correctly and trim any accidental spaces
             likedNames = (likesData.likes || []).map(name => name.trim());
         }
 
@@ -30,9 +29,7 @@ async function initUI() {
                 ${isFavPage ? "No saved items yet." : "No components found."}
             </h3>`;
         } else {
-            // Inside your initUI function in components.js
             collection.innerHTML = itemsToRender.map(item => {
-                // Check database names against our list, ignoring spaces/case
                 const isLiked = likedNames.some(dbName => 
                     dbName.trim().toLowerCase() === item.name.trim().toLowerCase()
                 );
@@ -40,7 +37,7 @@ async function initUI() {
             }).join('');
         }
 
-        // 5. Initialize Search/Filters & Pro Access AFTER cards exist
+        // 5. Initialize Search/Filters & Pro Access 
         setupSearchAndFilters();
         checkProAccess(authData);
 
@@ -178,12 +175,10 @@ function checkProAccess(authData) {
     }
 }
 
-// Start everything once
 document.addEventListener('DOMContentLoaded', initUI);
 
 // Force the page to refresh data when navigating back/forward
 window.addEventListener('pageshow', (event) => {
-    // persisted is true if the page is loaded from the browser cache (back button)
     if (event.persisted) {
         console.log("Page loaded from cache, re-initializing UI...");
         initUI(); 
