@@ -88,32 +88,70 @@ async function toggleLike(iconElement, itemName) {
 function setupSearchAndFilters() {
     const searchInput = document.querySelector('.searchInput');
     const filterContainer = document.querySelector('.componentLinks');
+    const cards = document.querySelectorAll('.itemCard');
 
+    // SEARCH FILTER
     if (searchInput) {
         searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
-            document.querySelectorAll('.itemCard').forEach(card => {
-                const category = card.getAttribute('dataName').toLowerCase();
-                card.style.display = category.includes(query) ? "block" : "none";
+            const query = searchInput.value.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const category = (card.getAttribute('dataname') || '').toLowerCase();
+
+                if (category.includes(query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
             });
+
+            refreshAOS();
         });
     }
 
-    if (filterContainer) {
-        filterContainer.addEventListener('click', (event) => {
-            const btn = event.target;
-            if (btn.classList.contains('component')) {
-                document.querySelector('.menuActive')?.classList.remove('menuActive');
-                btn.classList.add('menuActive');
-                const filter = btn.getAttribute('dataName');
-                document.querySelectorAll('.itemCard').forEach((card) => {
-                    const cardCat = card.getAttribute('dataName');
-                    card.style.display = (filter === 'all' || cardCat === filter) ? 'block' : 'none';
-                });
-            }
-        });
-    }
+    // CATEGORY FILTER
+filterContainer.addEventListener('click', (event) => {
+    const btn = event.target;
+    if (!btn.classList.contains('component')) return;
+
+    event.preventDefault?.();
+
+    const scrollY = window.scrollY; 
+    document.querySelector('.menuActive')?.classList.remove('menuActive');
+    btn.classList.add('menuActive');
+
+    const filter = btn.getAttribute('dataname');
+
+    cards.forEach(card => {
+        const cardCat = card.getAttribute('dataname');
+
+        if (filter === 'all' || cardCat === filter) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    setTimeout(() => {
+        if (window.AOS) {
+            AOS.refresh();
+        }
+
+        window.scrollTo(0, scrollY); 
+    }, 50);
+});
 }
+
+function refreshAOS() {
+    setTimeout(() => {
+        if (window.AOS) {
+            AOS.refreshHard();
+        }
+    }, 50);
+}
+
+// initialize
+setupSearchAndFilters();
 
 // PRO BLUR LOGIC
 function checkProAccess(authData) {
